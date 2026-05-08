@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Eats Dashboard</title>
+    <link rel="stylesheet" href="../../css/Admin/admin_dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <div class="logo-title">Campus Eats</div>
+          <div class="logo-sub">ADMIN CONSOLE</div>
+        </div>
+
+        <div class="menu">
+          <a href="#" class="menu-item active">📊Dashboard</a>
+          <a href="#" class="menu-item">📈Sales Reports</a>
+          <a href="#" class="menu-item">🎢Peak Hours</a>
+          <a href="#" class="menu-item">📢Promotions</a>
+          <a href="#" class="menu-item">🩺System Health</a>
+        </div>
+
+        <div class="sidebar-bottom">
+          <button class="student-btn">Switch to Student View</button>
+
+          <div class="bottom-links">
+            <div>Help Center</div>
+            <div>Logout</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main -->
+      <div class="main">
+        <!-- Topbar -->
+        <div class="topbar">
+          <div class="top-left">
+            <div class="dashboard-title">Dashboard</div>
+            <div class="date">Oct 24, 2023</div>
+          </div>
+
+          <div class="top-right">
+            <div class="search">
+              <input type="text" placeholder="Search data points..." />
+            </div>
+
+            <div class="icon">🔔</div>
+            <div class="icon">⚙️</div>
+
+            <img class="profile" src="photos/admin.jpg" alt="profile" />
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="status-bar">
+          <div class="status-left">
+            ✅ Live Status: All Canteen Systems Operational across 4 Campus
+            Zones.
+          </div>
+
+          <div class="status-right">
+            <img src="photos/male.png" class="small-user" />
+            <img src="photos/female.jpeg" class="small-user" />
+
+            <div class="staff">12 STAFF ACTIVE</div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="card-top">
+              <div class="small-title">Daily Revenue</div>
+              <div class="green">+14.2%</div>
+            </div>
+
+            <div class="big-number">৳42,850.00</div>
+
+            <div class="small-text">UPDATED 2M AGO</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="card-top">
+              <div class="small-title">Active Orders</div>
+              <div class="orange">Live</div>
+            </div>
+
+            <div class="big-number">28</div>
+
+            <div class="small-text">14 IN QUEUE | 14 PREP</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="card-top">
+              <div class="small-title">Today vs Yesterday</div>
+              <div class="small-text">Avg Week</div>
+            </div>
+
+            <div class="big-number">88%</div>
+
+            <progress value="88" max="100"></progress>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-grid">
+          <!-- Analytics -->
+          <!-- Analytics -->
+          <div class="analytics">
+            <!-- Header row -->
+            <div class="analytics-header">
+              <div class="analytics-text">
+                <div class="section-title">Revenue Analytics</div>
+
+                <div class="section-sub">
+                  Hourly distribution across all canteens
+                </div>
+              </div>
+
+              <div class="analytics-buttons">
+                <button class="btn active">Today</button>
+                <button class="btn">Weekly</button>
+              </div>
+            </div>
+
+            <div class="chart">
+              <div class="bar small"></div>
+              <div class="bar medium"></div>
+              <div class="bar large"></div>
+              <div class="bar peak"></div>
+              <div class="bar large"></div>
+              <div class="bar medium"></div>
+              <div class="bar small"></div>
+            </div>
+
+            <div class="times">
+              <div>08:00</div>
+              <div>12:00</div>
+              <div>16:00</div>
+              <div>20:00</div>
+            </div>
+          </div>
+
+          <div class="alerts">
+            <div class="alert-title">System Alerts</div>
+
+            <div class="alert-card">
+              <div class="alert-heading">Low Inventory</div>
+
+              <div class="alert-text">Mozzarella Cheese running low.</div>
+
+              <button class="alert-btn">ORDER RESTOCK</button>
+            </div>
+
+            <div class="alert-card">
+              <div class="alert-heading">Unpaid Batch</div>
+
+              <div class="alert-text">Payment gateway timeout reported.</div>
+
+              <button class="alert-btn">VERIFY PAYMENT</button>
+            </div>
+
+            <button class="clear-btn">CLEAR ALL NOTIFICATIONS</button>
+          </div>
+        </div>
+
+        <div class="bottom-grid">
+          <div class="food-section">
+            <div class="food-header">
+              <div class="section-title">Top Performing Items</div>
+
+              <div class="view">View All Menu</div>
+            </div>
+
+            <div class="food-grid">
+              <div class="food-card">
+                <img src="photos/pizza.jpg" class="food-img" />
+
+                <div class="food-info">
+                  <div class="food-title">Spicy chicken Pizza</div>
+
+                  <div class="food-sales">142 Sales Today</div>
+
+                  <div class="food-price">৳24,140</div>
+                </div>
+              </div>
+
+              <div class="food-card">
+                <img src="photos/avocado.jpg" class="food-img" />
+
+                <div class="food-info">
+                  <div class="food-title">Chicken Avocado Bowl</div>
+
+                  <div class="food-sales">98 Sales Today</div>
+
+                  <div class="food-price">৳14,700</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="report">
+            <div class="report-title">Daily Report Ready</div>
+
+            <div class="report-text">
+              Yesterday's performance analysis is ready for review.
+            </div>
+
+            <button class="report-btn">Read Summary →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
