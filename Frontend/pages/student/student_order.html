@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - UIU Canteen</title>
+    <link rel="stylesheet" href="../../css/student/student_order.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+
+        <div class="nav">
+
+            <div class="nav-logo">
+                <h2>UIU Canteen</h2>
+            </div>
+
+            <div class="nav-pages">
+
+                <div class="nav-page">
+                    <a href="">Home</a>
+                </div>
+
+                <div class="nav-page">
+                    <a href="">Menu</a>
+                </div>
+
+                <div class="nav-page">
+                    <a href="">Orders</a>
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+
+                <button class="icon-btn">🔔</button>
+
+                <button class="icon-btn">
+                    🛒
+                    <span class="cart-badge"></span>
+                </button>
+
+                <div class="user-avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=f0e6d2">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div class="checkout-header">
+
+            <h1>Checkout</h1>
+
+            <p>
+                Review your items and complete your order.
+            </p>
+
+        </div>
+
+
+        <!-- MAIN -->
+
+        <div class="checkout-layout">
+
+            <!-- LEFT -->
+
+            <div class="checkout-left">
+
+                <!-- TRAY -->
+
+                <div class="tray-box">
+
+                    <h2>Your Tray</h2>
+
+                    <!-- ITEM -->
+
+                    <div class="tray-item">
+
+                        <div class="tray-info">
+
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+
+                            <div>
+
+                                <h3>Mediterranean Greek Salad</h3>
+
+                                <p>UIU Central Kitchen • Extra Olives</p>
+
+                                <div class="quantity-box">
+
+                                    <button>-</button>
+                                    <span>1</span>
+                                    <button>+</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tray-price">
+                            ৳180.00
+                        </div>
+
+                    </div>
+
+
+                    <!-- ITEM -->
+
+                    <div class="tray-item">
+
+                        <div class="tray-info">
+
+                            <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?q=80&w=1200&auto=format&fit=crop">
+
+                            <div>
+
+                                <h3>Classic Beef Chow Mein</h3>
+
+                                <p>Canteen 2 • Spiciness: High</p>
+
+                                <div class="quantity-box">
+
+                                    <button>-</button>
+                                    <span>2</span>
+                                    <button>+</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="tray-price">
+                            ৳440.00
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORDER NOTE -->
+
+                <div class="instruction-box">
+
+                    <h2>Order Instructions</h2>
+
+                    <textarea placeholder="Add a note (e.g., 'No onions', 'Leave at the pickup desk')"></textarea>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="status-section">
+
+                    <div class="queue-box">
+
+                        <span>QUEUE PRIORITY</span>
+
+                        <h1>#042</h1>
+
+                        <p>Estimated Prep: 12-15 mins</p>
+
+                    </div>
+
+
+                    <div class="live-box">
+
+                        <span>LIVE STATUS</span>
+
+                        <h3>● Pending Confirmation</h3>
+
+                        <p>
+                            Tokens are generated immediately after payment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="checkout-right">
+
+                <!-- PAYMENT -->
+
+                <div class="payment-box">
+
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-option active">
+                        Digital Wallet
+                    </div>
+
+                    <div class="payment-option">
+                        Student ID Card
+                    </div>
+
+                    <div class="payment-option">
+                        Cash on Delivery
+                    </div>
+
+                </div>
+
+
+                <!-- SUMMARY -->
+
+                <div class="summary-box">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>৳620.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Service Fee (5%)</span>
+                        <span>৳31.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>VAT</span>
+                        <span>FREE</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <h1>৳651.00</h1>
+                    </div>
+
+                    <button class="place-btn">
+                        Place Order →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
