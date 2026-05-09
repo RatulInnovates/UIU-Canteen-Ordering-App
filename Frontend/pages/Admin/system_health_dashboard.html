@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>System Health</title>
+    <link rel="stylesheet" href="../../css/Admin/system_health-dashboard.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-title">Campus Eats</div>
+        <div class="logo-sub">ADMIN CONSOLE</div>
+      </div>
+
+      <div class="menu">
+        <a href="admin_dashboard.html" class="menu-item">📊 Dashboard</a>
+        <a href="admin_sales_report.html" class="menu-item">📈 Sales Reports</a>
+        <a href="peak_hour_analytics.html" class="menu-item">🎢 Peak Hours</a>
+        <a href="promotions_manager.html" class="menu-item">📢 Promotions</a>
+        <a href="#" class="menu-item active">🩺 System Health</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="student-btn">Switch to Student View</button>
+        <div class="bottom-links">
+          <a class="bottom-links" href="#">Help Center</a>
+          <a class="bottom-links" href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">Culinary Admin</span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="🔍  Search systems..." />
+        </div>
+        <div class="topbar-right">
+          <a href="" class="icon-btn" title="Notifications">🔔</a>
+          <a href="" class="icon-btn" title="Settings">⚙</a>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name">Alex Rivers</span>
+              <span class="user-role">IT DIRECTOR</span>
+            </div>
+            <a href="#" class="avatar-link">
+              <img
+                src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg"
+                alt="AR"
+                class="avatar-img"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1 class="page-title">System Health Dashboard</h1>
+            <p class="page-desc">
+              Real-time status of the Campus Eats technical ecosystem.
+            </p>
+          </div>
+          <div class="page-header-right">
+            <a href="#"
+              ><button class="run-diag-btn">⚙ Run Diagnostic</button></a
+            >
+          </div>
+        </div>
+
+        <div class="top-row">
+          <div class="status-card">
+            <div class="status-label">CURRENT STATUS</div>
+            <div class="status-value-row">
+              <span class="status-value">99.4%</span>
+              <span class="uptime-badge">Uptime</span>
+            </div>
+            <div class="status-desc">
+              All systems operational across North and South campus clusters.
+            </div>
+            <div class="status-footer">
+              <span class="health-pill">● Healthy</span>
+              <span class="last-checked">Last checked: 2 mins ago</span>
+            </div>
+          </div>
+
+          <div class="active-staff-card">
+            <div class="active-staff-label">ACTIVE STAFF</div>
+            <div class="active-staff-value">142</div>
+            <div class="active-staff-sub">Across 12 dining halls</div>
+            <div class="staff-progress-wrap">
+              <div class="staff-progress-bar" style="width: 78%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mid-row">
+          <div class="pos-card">
+            <div class="card-header">
+              <span class="card-title">POS Terminals</span>
+              <span class="card-icon">🖥️</span>
+            </div>
+            <div class="pos-grid">
+              <div class="pos-item">
+                <div class="pos-location">North Union</div>
+                <div class="pos-count">12/12</div>
+                <span class="pos-badge pos-online">ONLINE</span>
+              </div>
+              <div class="pos-item">
+                <div class="pos-location">South Hub</div>
+                <div class="pos-count">8/10</div>
+                <span class="pos-badge pos-warning">WARNING</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="inventory-card">
+            <div class="card-header">
+              <span class="card-title">Inventory Levels</span>
+              <span class="card-icon">📦</span>
+            </div>
+            <div class="inventory-item">
+              <div class="inv-row">
+                <span class="inv-label">Perishables</span>
+                <span class="inv-pct">82%</span>
+              </div>
+              <div class="inv-bar-wrap">
+                <div class="inv-bar inv-bar-blue" style="width: 82%"></div>
+              </div>
+            </div>
+            <div class="inventory-item">
+              <div class="inv-row">
+                <span class="inv-label">Dry Goods</span>
+                <span class="inv-pct inv-pct-red">14%</span>
+              </div>
+              <div class="inv-bar-wrap">
+                <div class="inv-bar inv-bar-red" style="width: 14%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-row">
+          <div class="latency-card">
+            <div class="latency-header">
+              <div>
+                <div class="latency-title">Processing Latency</div>
+                <div class="latency-sub">
+                  Average response time for order routing
+                </div>
+              </div>
+              <div class="latency-legend">
+                <span class="legend-dot legend-prod"></span
+                ><span class="legend-label">Production</span>
+                <span class="legend-dot legend-staging"></span
+                ><span class="legend-label">Staging</span>
+              </div>
+            </div>
+
+            <div class="lat-chart">
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 60px; background-color: #b0cfe8"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 90px; background-color: #b0cfe8"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 130px; background-color: #2a6496"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 110px; background-color: #2a6496"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 80px; background-color: #b0cfe8"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 50px; background-color: #b0cfe8"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 140px; background-color: #2a6496"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 160px; background-color: #2a6496"
+                ></div>
+              </div>
+              <div class="lat-bar-wrap">
+                <div
+                  class="lat-bar"
+                  style="height: 100px; background-color: #b0cfe8"
+                ></div>
+              </div>
+            </div>
+            <div class="lat-x-labels">
+              <span>08:00 AM</span>
+              <span>12:00 PM</span>
+              <span>04:00 PM</span>
+              <span>08:00 PM</span>
+            </div>
+
+            <div class="infra-title">Server Infrastructure</div>
+            <div class="infra-list">
+              <div class="infra-item">
+                <div class="infra-icon infra-icon-blue">🖧</div>
+                <div class="infra-info">
+                  <div class="infra-name">Main Frame Node-A</div>
+                  <div class="infra-sub">US-EAST-1 (Active)</div>
+                </div>
+                <div class="infra-status">
+                  <span class="infra-badge infra-healthy">● Healthy</span>
+                </div>
+                <div class="infra-cpu">CPU: 42%</div>
+              </div>
+
+              <div class="infra-item">
+                <div class="infra-icon infra-icon-orange">🖧</div>
+                <div class="infra-info">
+                  <div class="infra-name">Backup Cluster-02</div>
+                  <div class="infra-sub">US-EAST-2 (Standby)</div>
+                </div>
+                <div class="infra-status">
+                  <span class="infra-badge infra-ready">● Ready</span>
+                </div>
+                <div class="infra-cpu">CPU: 08%</div>
+              </div>
+
+              <div class="infra-item">
+                <div class="infra-icon infra-icon-gray">🔗</div>
+                <div class="infra-info">
+                  <div class="infra-name">Payment Gateway API</div>
+                  <div class="infra-sub">External Provider</div>
+                </div>
+                <div class="infra-status">
+                  <span class="infra-badge infra-critical">● Critical</span>
+                </div>
+                <div class="infra-cpu">Lat: 450ms</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="incidents-card">
+            <div class="incidents-title">Recent Incidents</div>
+            <div class="incident-item">
+              <div class="incident-time">10:24 AM</div>
+              <div class="incident-name">POS Gateway Timeout</div>
+              <div class="incident-desc">
+                System automatically failed over to backup gateway. Transaction
+                success rate dropped by 4% during transition.
+              </div>
+            </div>
+
+            <div class="incident-item">
+              <div class="incident-dot incident-dot-orange"></div>
+              <div class="incident-time">09:15 AM</div>
+              <div class="incident-name">Inventory Sync Lag</div>
+              <div class="incident-desc">
+                South Hub inventory reporting a 5-minute delay in database
+                replication. Engineering team notified.
+              </div>
+            </div>
+
+            <div class="incident-item">
+              <div class="incident-dot incident-dot-blue"></div>
+              <div class="incident-time">Yesterday, 11:30 PM</div>
+              <div class="incident-name">Weekly Patch Deployed</div>
+              <div class="incident-desc">
+                Security update v2.41 applied successfully to all terminal
+                nodes. No downtime recorded.
+              </div>
+            </div>
+
+            <div class="view-logs-box">
+              <div class="view-logs-label">WANT MORE DETAIL?</div>
+              <a href="#" class="view-logs-link">View Full System Logs →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>© 2024 Campus Eats Admin Systems</span>
+        <div class="footer-links">
+          <a href="#" class="footer-link">SECURITY AUDIT</a>
+          <a href="#" class="footer-link">API DOCS</a>
+          <a href="#" class="footer-link">PRIVACY</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
