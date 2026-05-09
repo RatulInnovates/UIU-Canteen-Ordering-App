@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics</title>
+    <link rel="stylesheet" href="../../css/Admin/peak_hour_analytics.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-title">Campus Eats</div>
+        <div class="logo-sub">ADMIN CONSOLE</div>
+      </div>
+
+      <div class="menu">
+        <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+        <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+        <a href="#" class="menu-item active">🎢Peak Hours</a>
+        <a href="promotions_manager.html" class="menu-item">📢Promotions</a>
+        <a href="system_health_dashboard.html" class="menu-item">🩺System Health</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="student-btn">Switch to Student View</button>
+
+        <div class="bottom-links">
+          <a class="bottom-links" href="#">Help center</a>
+          <a class="bottom-links" href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-title">Culinary Admin</span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="🔍 Search analytics..." />
+        </div>
+        <div class="topbar-right">
+          <a href="#" class="icon-btn" title="Notifications"
+            >🔔<span class="notif-dot"></span
+          ></a>
+          <a href="#" class="icon-btn" title="Settings">⚙</a>
+          <a href="#" class="avatar-link">
+            <img
+              src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg"
+              alt="AU"
+              class="avatar-img"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="page-header">
+          <div class="page-header-left">
+            <div class="intelligence-label">INTELLIGENCE ENGINE</div>
+            <div class="page-title">Peak Hour Analytics</div>
+            <div class="page-desc">
+              Deep dive into campus ordering rhythms to optimize kitchen
+              staffing and inventory flow.
+            </div>
+          </div>
+          <div class="page-header-right">
+            <button class="btn-outline">📅 This Week</button>
+            <button class="btn-export">⬆ Export Report</button>
+          </div>
+        </div>
+
+        <div class="content-row">
+          <div class="chart-section">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <div>
+                  <div class="chart-title">Daily Order Velocity</div>
+                  <div class="chart-sub">
+                    Real-time volume tracking across all outlets
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span class="legend-dot dot-orange"></span
+                  ><span class="legend-label">Today</span>
+                  <span class="legend-dot dot-gray"></span
+                  ><span class="legend-label">Avg. Weekday</span>
+                </div>
+              </div>
+              <img
+                src="https://www.ibef.org/uploads/blog/1729668485_7e41c41509757b76f9cc.png"
+                alt="Daily Order Velocity Graph — shows today (orange line) peaking at 12:45 PM with 412 orders, vs avg weekday (dashed gray line)"
+                class="chart-placeholder-img"
+              />
+            </div>
+
+            <div class="heatmap-card">
+              <div class="heatmap-header">
+                <div>
+                  <div class="chart-title">Weekly Demand Heatmap</div>
+                  <div class="chart-sub">
+                    Order concentration across hours and days
+                  </div>
+                </div>
+                <div class="heatmap-legend">
+                  <span class="legend-label">LOW</span>
+                  <span class="heat-box" style="background: #f5e6d0"></span>
+                  <span class="heat-box" style="background: #f0c080"></span>
+                  <span class="heat-box" style="background: #f0a040"></span>
+                  <span class="heat-box" style="background: #d4601a"></span>
+                  <span class="legend-label">HIGH</span>
+                </div>
+              </div>
+
+              <div class="heatmap-grid">
+                <div class="heatmap-row heatmap-header-row">
+                  <span class="day-label"></span>
+                  <span class="hour-label">8AM</span>
+                  <span class="hour-label">9AM</span>
+                  <span class="hour-label">10AM</span>
+                  <span class="hour-label">11AM</span>
+                  <span class="hour-label peak-hour">12PM</span>
+                  <span class="hour-label peak-hour">1PM</span>
+                  <span class="hour-label">2PM</span>
+                  <span class="hour-label">3PM</span>
+                  <span class="hour-label">4PM</span>
+                  <span class="hour-label">5PM</span>
+                  <span class="hour-label">6PM</span>
+                  <span class="hour-label">7PM</span>
+                  <span class="hour-label">8PM</span>
+                </div>
+
+                <div class="heatmap-row">
+                  <span class="day-label">MON</span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #d4601a"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                </div>
+
+                <div class="heatmap-row">
+                  <span class="day-label">TUE</span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #d4601a"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                </div>
+
+                <div class="heatmap-row">
+                  <span class="day-label">WED</span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #d4601a"></span>
+                  <span class="heat-cell" style="background: #d4601a"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                </div>
+
+                <div class="heatmap-row">
+                  <span class="day-label">THU</span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                </div>
+
+                <!-- FRI -->
+                <div class="heatmap-row">
+                  <span class="day-label">FRI</span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #d4601a"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #ebebeb"></span>
+                  <span class="heat-cell" style="background: #f5e6d0"></span>
+                  <span class="heat-cell" style="background: #f0c080"></span>
+                  <span class="heat-cell" style="background: #f0a040"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="insight-cards-row">
+              <div class="insight-card">
+                <div class="insight-tag labor">LABOR INSIGHTS</div>
+                <div class="insight-text">
+                  <strong>Staff levels are optimal for current volume.</strong>
+                </div>
+                <div class="insight-sub">
+                  Surge expected at 12:00 PM (+15%).
+                </div>
+              </div>
+              <div class="insight-card">
+                <div class="insight-tag inventory">INVENTORY ALERT</div>
+                <div class="insight-text">
+                  <strong>"Artisan Sourdough" running low.</strong>
+                </div>
+                <div class="insight-sub">
+                  Replenish before 1:00 PM peak demand.
+                </div>
+              </div>
+              <div class="insight-card">
+                <div class="insight-tag promo">SMART PROMO</div>
+                <div class="insight-text">
+                  <strong>Low volume window: 3:00 - 4:00 PM.</strong>
+                </div>
+                <div class="insight-sub">
+                  Suggested flash discount: "Afternoon Refresher".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-stats">
+            <div class="stat-mini-card">
+              <div class="stat-mini-top">
+                <span class="stat-mini-icon">🍴</span>
+                <span class="badge badge-green">+12% vs LW</span>
+              </div>
+              <div class="stat-mini-value">1,842</div>
+              <div class="stat-mini-label">Daily Total Capacity</div>
+            </div>
+
+            <div class="stat-mini-card stat-mini-dark">
+              <div class="stat-mini-top">
+                <span class="stat-mini-icon">⏱</span>
+                <span class="stat-target">Target: 8min</span>
+              </div>
+              <div class="stat-mini-value">6.4 min</div>
+              <div class="stat-mini-label">Avg. Prep Time (Peak)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+        <div class="footer-right">
+          <span class="live-dot"></span>
+          <span>Live Updates Active</span>
+          <span style="margin-left: 15px">V 2.4.1-Stable</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

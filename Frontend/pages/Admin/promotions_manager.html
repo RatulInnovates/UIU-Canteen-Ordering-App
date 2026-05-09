@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promotions</title>
+    <link rel="stylesheet" href="../../css/Admin/promotions_manager.css">
+</head>
+<body>
+
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-title">Campus Eats</div>
+        <div class="logo-sub">ADMIN CONSOLE</div>
+      </div>
+
+      <div class="menu">
+        <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+        <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+        <a href="peak_hour_analytics.html" class="menu-item">🎢Peak Hours</a>
+        <a href="#" class="menu-item active">📢Promotions</a>
+        <a href="system_health_dashboard.html" class="menu-item">🩺System Health</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="student-btn">Switch to Student View</button>
+
+        <div class="bottom-links">
+          <a class="bottom-links" href="#">Help center</a>
+          <a class="bottom-links" href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+        <div class="topbar">
+            <div class="search">
+                <input type="text" placeholder="🔍  Search promotions...">
+            </div>
+            <div class="topbar-right">
+                <a href="#" class="icon-btn" title="Notifications">🔔</a>
+                <a href="#" class="icon-btn" title="Settings">⚙</a>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Head of Operations</span>
+                    </div>
+                    <a href="#" class="avatar-link">
+                        <img src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg" alt="AU" class="avatar-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="page-header">
+                <div class="page-header-left">
+                    <div class="page-tag">MARKETING INTELLIGENCE</div>
+                    <h1 class="page-title">Promotions Manager</h1>
+                    <p class="page-desc">Curate the student dining experience through intelligent visual storytelling and strategic scheduling.</p>
+                </div>
+                <div class="page-header-right">
+                    <a href="#"><button class="btn-archive">Archive Old</button></a>
+                    <a href="#"><button class="btn-publish">Publish All Changes</button></a>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="campaign-card">
+                    <div class="campaign-card-title">
+                        <span class="orange-bar"></span>
+                        <span class="cc-title-text">Campaign Creation</span>
+                    </div>
+
+                    <div class="upload-box">
+                        <div class="upload-icon">☁️</div>
+                        <a href="#" class="upload-text">Upload Promotional Banner</a>
+                        <div class="upload-sub">Recommended: 1920*820px (Max 5MB)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">PROMOTION TITLE</div>
+                        <input type="text" class="form-input" placeholder="e.g., Midnight Finals Fuel 20% Off">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-label">TARGET AUDIENCE</div>
+                            <div class="form-select">
+                                All Students <span class="select-arrow">▾</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">DISCOUNT CODE</div>
+                            <input type="text" class="form-input" value="FINALS24">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">SPECIAL PRE-ORDER AVAILABILITY</div>
+                        <div class="day-grid">
+                            <button class="day-btn">Monday</button>
+                            <button class="day-btn">Tuesday</button>
+                            <button class="day-btn day-active">Wednesday</button>
+                            <button class="day-btn day-active">Thursday</button>
+                            <button class="day-btn">Friday</button>
+                            <button class="day-btn">Saturday</button>
+                            <button class="day-btn">Sunday</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-col">
+                    <div class="preview-header">
+                        <span class="preview-title">Active Live Preview</span>
+                        <span class="live-badge">LIVE NOW</span>
+                    </div>
+
+                    <div class="preview-card">
+                        <img src="https://www.giallozafferano.com/images/295-29562/Pizza-alla-diavola_1200x800.jpg" alt="Artisan Night: Buy 1 Get 1 Free" class="preview-img">
+                        <div class="preview-overlay">
+                            <div class="preview-tag">SPECIAL</div>
+                            <div class="preview-name">Artisan Night:<br>Buy 1 Get 1 Free</div>
+                        </div>
+                        <a href="#" class="preview-edit">✏</a>
+                    </div>
+
+                    <div class="preview-card">
+                        <img src="https://izzycooking.com/wp-content/uploads/2021/04/Jungle-Juice-3.jpg" alt="Fresh Smoothie Bowls $5.99" class="preview-img">
+                        <div class="preview-overlay">
+                            <div class="preview-tag">MORNING KICKSTART</div>
+                            <div class="preview-name">Fresh Smoothie<br>Bowls $5.99</div>
+                        </div>
+                        <a href="#" class="preview-edit">✏</a>
+                    </div>
+
+                    <div class="conversion-card">
+                        <div class="conversion-left">
+                            <span class="conversion-icon">📈</span>
+                            <div>
+                                <div class="conversion-label">CONVERSION RATE</div>
+                                <div class="conversion-value">14.2%</div>
+                            </div>
+                        </div>
+                        <div class="conversion-right">
+                            <div class="conversion-vs">VS LAST WEEK</div>
+                            <div class="conversion-change">+2.4%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="queue-section">
+                <div class="queue-header">
+                    <span class="queue-title">Campaign Queue</span>
+                    <div class="queue-actions">
+                        <a href="#" class="queue-icon-btn">☰</a>
+                        <a href="#" class="queue-icon-btn">≡</a>
+                    </div>
+                </div>
+
+                <table class="queue-table">
+                    <thead>
+                        <tr>
+                            <th>CAMPAIGN NAME</th>
+                            <th>STATUS</th>
+                            <th>SCHEDULE</th>
+                            <th>IMPACT</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="campaign-cell">
+                                    <img src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt="Burger Bash Fridays" class="campaign-img">
+                                    <a href="#" class="campaign-name-link">Burger Bash Fridays</a>
+                                </div>
+                            </td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td class="schedule-text">Fri only (Repeating)</td>
+                            <td>
+                                <div class="impact-cell">
+                                    <div class="impact-bar-wrap">
+                                        <div class="impact-bar impact-high" style="width: 75%;"></div>
+                                    </div>
+                                    <span class="impact-label impact-label-high">High</span>
+                                </div>
+                            </td>
+                            <td><a href="#" class="row-more">⋮</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="campaign-cell">
+                                    <img src="https://images.everydayhealth.com/images/diet-nutrition/what-is-a-vegan-diet-benefits-food-list-beginners-guide-alt-1440x810.jpg?w=508" alt="Vegan Monday Delights" class="campaign-img">
+                                    <a href="#" class="campaign-name-link">Vegan Monday Delights</a>
+                                </div>
+                            </td>
+                            <td><span class="status-badge status-queue">In-Queue</span></td>
+                            <td class="schedule-text">Nov 12 - Dec 01</td>
+                            <td>
+                                <div class="impact-cell">
+                                    <div class="impact-bar-wrap">
+                                        <div class="impact-bar impact-med" style="width: 45%;"></div>
+                                    </div>
+                                    <span class="impact-label">Med</span>
+                                </div>
+                            </td>
+                            <td><a href="#" class="row-more">⋮</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+            <div class="footer-right">
+                <span class="live-dot"></span>
+                <span>Live Updates Active</span>
+                <span style="margin-left: 15px;">V 2.4.1-Stable</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
