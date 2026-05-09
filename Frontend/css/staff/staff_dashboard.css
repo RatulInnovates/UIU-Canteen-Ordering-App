@@ -285,7 +285,7 @@ body {
     width: 250px;
     background-color: #FFFFFF;
     padding: 30px 20px;
-    border-left: 2px solid #EAE7E7;
+    border-right: 2px solid #EAE7E7;
     display: flex;
     flex-direction: column;
 }
