@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | UIU Canteen</title>
+    <link rel="stylesheet" href="../../css/student/student.css">
+    <link rel="stylesheet" href="../../css/student/student_menu.css">
+    <link rel="stylesheet" href="../../css/ui-feedback.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="nav">
+
+            <div class="nav-logo">
+                <a href="student_dashboard.html"><h2>UIU Canteen</h2></a>
+            </div>
+
+            <div class="nav-pages">
+
+                <div class="nav-page">
+                    <a href="student_dashboard.html">Home</a>
+                </div>
+
+                <div class="nav-page nav-page-active">
+                    <a href="student_menu.html">Menu</a>
+                </div>
+
+                <div class="nav-page">
+                    <a href="student_order.html">Orders</a>
+                </div>
+
+                <div class="nav-search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search dishes, ingredients…" aria-label="Search menu">
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+
+                <button type="button" class="icon-btn" aria-label="Notifications">🔔</button>
+
+                <a href="student_order.html" class="icon-btn" aria-label="Tray and checkout">
+                    🛒
+                    <span class="cart-badge"></span>
+                </a>
+
+                <div class="user-avatar">
+                    <a href="student_settings.html">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=f0e6d2" alt="Account">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <main class="menu-page">
+
+            <section class="menu-hero" aria-label="Menu highlights">
+                <div>
+                    <h1>Browse today's menu</h1>
+                    <p>Fresh meals from UIU Central Kitchen—nutritional cues, campus pricing in ৳, and quick add to your tray for checkout.</p>
+                </div>
+                <div class="menu-hero-meta">
+                    <span>Kitchen status</span>
+                    <strong>Open · ~8 min avg</strong>
+                </div>
+            </section>
+
+            <div class="menu-toolbar">
+                <div class="nav-search" role="search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Filter visible items…" id="menu-filter" aria-label="Filter menu items">
+                </div>
+                <div class="category-chips" role="tablist" aria-label="Categories">
+                    <button type="button" class="chip chip-active" data-filter="all">All</button>
+                    <button type="button" class="chip" data-filter="rice">Rice &amp; mains</button>
+                    <button type="button" class="chip" data-filter="fast">Fast bites</button>
+                    <button type="button" class="chip" data-filter="healthy">Healthy</button>
+                    <button type="button" class="chip" data-filter="drinks">Drinks</button>
+                </div>
+            </div>
+
+            <section class="menu-category" id="rice" data-cat="rice">
+                <h2 class="menu-category-title">Rice &amp; noodles</h2>
+                <p class="menu-category-desc">Platters and bowls crafted for lecture-day fuel.</p>
+                <div class="menu-grid">
+
+                    <article class="menu-tile" data-tags="rice">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800&auto=format&fit=crop" alt="Kacchi beef biriyani" loading="lazy">
+                            <span class="menu-badge menu-badge-hot">Popular</span>
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Kacchi Beef Biriyani</h3>
+                            <p>Basmati, potato, dried fruit, house blend spices—slow cooked.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳320</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="rice">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?q=80&w=800&auto=format&fit=crop" alt="Chicken polao" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Chicken Polao</h3>
+                            <p>Fragrant rice with roast chicken leg and crispy shallots.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳260</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="rice">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?q=80&w=800&auto=format&fit=crop" alt="Beef chow mein" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Beef Chow Mein</h3>
+                            <p>Wok-tossed noodles, seasonal vegetables, soy-garlic glaze.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳220</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="menu-category" id="fast" data-cat="fast">
+                <h2 class="menu-category-title">Fast bites</h2>
+                <p class="menu-category-desc">Between-class comfort without the long queue.</p>
+                <div class="menu-grid">
+
+                    <article class="menu-tile" data-tags="fast">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop" alt="UIU burger" loading="lazy">
+                            <span class="menu-badge">Chef’s pick</span>
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Signature UIU Burger</h3>
+                            <p>Smash patty, cheddar, caramelized onion, brioche.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳285</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="fast">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop" alt="Margherita slice" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Margherita Slice</h3>
+                            <p>Stone-baked crust, San Marzano tomato, fresh mozzarella.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳140</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="fast">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop" alt="Loaded fries" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Loaded Fries</h3>
+                            <p>Sour cream, spring onion, smoked paprika crumble.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳165</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="menu-category" id="healthy" data-cat="healthy">
+                <h2 class="menu-category-title">Healthy &amp; light</h2>
+                <p class="menu-category-desc">Higher fiber, grilled proteins, vegetarian-forward options.</p>
+                <div class="menu-grid">
+
+                    <article class="menu-tile" data-tags="healthy">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop" alt="Mediterranean bowl" loading="lazy">
+                            <span class="menu-badge menu-badge-veg">Veg</span>
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Mediterranean Bowl</h3>
+                            <p>Chickpeas, cucumber, olives, tahini lemon dressing.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳195</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="healthy">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop" alt="Grilled chicken salad" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Grilled Chicken Salad</h3>
+                            <p>Mixed greens, feta, citrus vinaigrette, herb chicken.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳210</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="healthy">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?q=80&w=800&auto=format&fit=crop" alt="Thai green curry tofu" loading="lazy">
+                            <span class="menu-badge menu-badge-veg">Veg</span>
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Thai Green Curry (Tofu)</h3>
+                            <p>Jasmine rice, coconut broth, Thai basil, snap peas.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳230</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="menu-category" id="drinks" data-cat="drinks">
+                <h2 class="menu-category-title">Drinks &amp; dessert</h2>
+                <p class="menu-category-desc">Cold brews, smoothies, and a sweet finish.</p>
+                <div class="menu-grid">
+
+                    <article class="menu-tile" data-tags="drinks">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=800&auto=format&fit=crop" alt="Iced americano" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Iced Americano</h3>
+                            <p>Double shot, filtered water, light citrus twist.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳95</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="drinks">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1505252585461-04db1eb84628?q=80&w=800&auto=format&fit=crop" alt="Berry smoothie" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Berry Oat Smoothie</h3>
+                            <p>Mixed berries, oat milk, chia, no refined sugar.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳160</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-tile" data-tags="drinks">
+                        <div class="menu-tile-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=800&auto=format&fit=crop" alt="Chocolate brownie" loading="lazy">
+                        </div>
+                        <div class="menu-tile-body">
+                            <h3>Walnut Brownie</h3>
+                            <p>Dark chocolate, toasted walnut, warm service until 4pm.</p>
+                            <div class="menu-tile-meta">
+                                <span class="menu-price">৳85</span>
+                                <a class="btn-add-cart" href="student_order.html">Add +</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/site.js" defer></script>
+
+</body>
+
+</html>

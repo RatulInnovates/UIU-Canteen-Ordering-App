@@ -123,6 +123,21 @@ body {
     width: 100%;
 }
 
+a.switch-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.switch-btn:hover {
+    filter: brightness(0.96);
+}
+
+.logout-item {
+    color: #d32f2f;
+}
+
 /* MAIN CONTENT */
 .main-content {
     flex: 1;

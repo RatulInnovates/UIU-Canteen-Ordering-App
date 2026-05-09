@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIU Canteen</title>
     <link rel="stylesheet" href="../../css/student/student.css">
+    <link rel="stylesheet" href="../../css/ui-feedback.css">
 </head>
 
 <body>
@@ -16,21 +17,21 @@
         <div class="nav">
 
             <div class="nav-logo">
-                <h2>UIU Canteen</h2>
+                <a href="student_dashboard.html"><h2>UIU Canteen</h2></a>
             </div>
 
             <div class="nav-pages">
 
-                <div class="nav-page">
-                    <a href="">Home</a>
+                <div class="nav-page nav-page-active">
+                    <a href="student_dashboard.html">Home</a>
                 </div>
 
                 <div class="nav-page">
-                    <a href="">Menu</a>
+                    <a href="student_menu.html">Menu</a>
                 </div>
 
                 <div class="nav-page">
-                    <a href="">Orders</a>
+                    <a href="student_order.html">Orders</a>
                 </div>
 
                 <div class="nav-search">
@@ -49,14 +50,14 @@
 
             <div class="nav-right">
 
-                <button class="icon-btn">
+                <button type="button" class="icon-btn" aria-label="Notifications">
                     🔔
                 </button>
 
-                <button class="icon-btn">
+                <a href="student_order.html" class="icon-btn" aria-label="Tray and checkout">
                     🛒
                     <span class="cart-badge"></span>
-                </button>
+                </a>
 
                 <div class="user-avatar">
                     <a href="student_settings.html">
@@ -88,8 +89,8 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <button class="order-btn">Order Now</button>
-                    <button class="details-btn">Details</button>
+                    <a href="student_menu.html" class="order-btn">Order Now</a>
+                    <a href="student_menu.html" class="details-btn">Browse menu</a>
                 </div>
 
             </div>
@@ -107,9 +108,9 @@
                     Avg. Wait: 8 mins
                 </div>
 
-                <button class="optimize-btn">
-                    Optimize My Order
-                </button>
+                <a href="student_order.html" class="optimize-btn">
+                    Go to checkout
+                </a>
 
             </div>
 
@@ -136,7 +137,7 @@
 
                     <div class="card-bottom">
                         <span>$14.00</span>
-                        <button>Pre-order</button>
+                        <a href="student_order.html">Pre-order</a>
                     </div>
 
                 </div>
@@ -154,7 +155,7 @@
 
                     <div class="card-bottom">
                         <span>$11.50</span>
-                        <button>Pre-order</button>
+                        <a href="student_order.html">Pre-order</a>
                     </div>
 
                 </div>
@@ -172,7 +173,7 @@
 
                     <div class="card-bottom">
                         <span>$13.20</span>
-                        <button>Pre-order</button>
+                        <a href="student_order.html">Pre-order</a>
                     </div>
 
                 </div>
@@ -218,7 +219,7 @@
 
             </div>
 
-            <button class="add-btn">+</button>
+            <a href="student_order.html" class="add-btn" aria-label="Add to tray">+</a>
 
         </div>
 
@@ -289,6 +290,7 @@
         </div>
 
     </div>
+    <script src="../../js/site.js" defer></script>
 
 </body>
 

@@ -4,29 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
+    <title>Settings | UIU Canteen</title>
+    <link rel="stylesheet" href="../../css/student/student.css">
     <link rel="stylesheet" href="../../css/student/student_settings.css">
+    <link rel="stylesheet" href="../../css/ui-feedback.css">
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- NAVBAR -->
-
         <div class="nav">
 
-            <div class="logo">
-               <a href="student_dashboard.html">
-                 <h2>UIU Canteen</h2>
-               </a>
+            <div class="nav-logo">
+                <a href="student_dashboard.html"><h2>UIU Canteen</h2></a>
+            </div>
+
+            <div class="nav-pages">
+
+                <div class="nav-page">
+                    <a href="student_dashboard.html">Home</a>
+                </div>
+
+                <div class="nav-page">
+                    <a href="student_menu.html">Menu</a>
+                </div>
+
+                <div class="nav-page">
+                    <a href="student_order.html">Orders</a>
+                </div>
+
+                <div class="nav-search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" placeholder="Search…" aria-label="Search">
+                </div>
+
             </div>
 
             <div class="nav-right">
 
-                <button class="logout-btn">
-                    Logout
-                </button>
+                <button type="button" class="icon-btn" aria-label="Notifications">🔔</button>
+
+                <a href="student_order.html" class="icon-btn" aria-label="Tray and checkout">
+                    🛒
+                    <span class="cart-badge"></span>
+                </a>
+
+                <div class="user-avatar user-avatar-active">
+                    <a href="student_settings.html" aria-current="page">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=f0e6d2" alt="Account">
+                    </a>
+                </div>
+
+                <a href="../../index.html" class="logout-btn-link">Logout</a>
 
             </div>
 
@@ -240,6 +274,7 @@
 
     </div>
 
+    <script src="../../js/site.js" defer></script>
 </body>
 
 </html>

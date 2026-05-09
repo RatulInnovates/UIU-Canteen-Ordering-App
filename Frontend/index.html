@@ -3,9 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UIU Canteen — Academic Dining Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/ui-feedback.css">
 </head>
-<body>
-    
+<body class="auth-body">
+    <header class="auth-header">
+        <a href="index.html" class="auth-brand">
+            <svg class="auth-brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 3v4c0 1.1-.9 2-2 2H4" stroke="#F58220" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 3v4c0 1.1.9 2 2 2h2" stroke="#F58220" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 3v18" stroke="#005581" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>UIU Canteen</span>
+        </a>
+        <span class="auth-tagline">Academic Dining Hub</span>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-card">
+            <section class="auth-hero" aria-label="About UIU Canteen">
+                <h1 class="auth-hero-title">Fueling <span class="accent">Academic</span> Excellence.</h1>
+                <p class="auth-hero-text">
+                    The intelligent concierge for United International University's culinary experience.
+                    Experience seamless ordering and smart nutrition tracking.
+                </p>
+                <div class="auth-feature-grid">
+                    <div class="auth-tile auth-tile--photo">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Bright university dining hall" width="600" height="400" loading="lazy">
+                    </div>
+                    <div class="auth-tile auth-tile--cta auth-tile--orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                        <p class="auth-tile-label">Fast Track Ordering</p>
+                    </div>
+                    <div class="auth-tile auth-tile--cta auth-tile--navy">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path fill="currentColor" d="M10.5 12.5l1.8 1.8 3.7-4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="auth-tile-label">Secure Payments</p>
+                    </div>
+                    <div class="auth-tile auth-tile--photo">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=80" alt="Gourmet plated dish" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <section class="auth-forms" aria-live="polite">
+                <div class="auth-forms-inner">
+                    <!-- Login -->
+                    <form id="form-login" class="auth-panel" action="#" method="get" novalidate>
+                        <h2 class="auth-form-title">Welcome Back</h2>
+                        <p class="auth-form-sub">Please select your role and enter your credentials.</p>
+
+                        <span class="auth-field-label" id="label-role-login">I am a...</span>
+                        <div class="auth-role-grid" role="group" aria-labelledby="label-role-login">
+                            <button type="button" class="auth-role-btn" data-role="student" aria-pressed="true">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12v8H2v-8"/><path d="M6 12V7a6 6 0 0112 0v5"/><path d="M6 21h12"/></svg>
+                                Student
+                            </button>
+                            <button type="button" class="auth-role-btn" data-role="staff" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                                Staff
+                            </button>
+                            <button type="button" class="auth-role-btn" data-role="admin" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="2"/></svg>
+                                Admin
+                            </button>
+                        </div>
+                        <input type="hidden" name="role" id="login-role" value="student">
+
+                        <div class="auth-field">
+                            <label class="auth-field-label" for="login-email">Institutional email</label>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M4 4h16v16H4z" opacity="0"/><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/>
+                                </svg>
+                                <input id="login-email" name="email" type="email" autocomplete="username" placeholder="e.g. name@student.uiu.ac.bd" required>
+                            </div>
+                        </div>
+
+                        <div class="auth-field">
+                            <div class="auth-row-label">
+                                <label class="auth-field-label" for="login-password">Password</label>
+                                <a class="link-orange" href="#" data-popup-message="Reset link would be sent to your institutional email." data-popup-stop>Forgot Password?</a>
+                            </div>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+                                </svg>
+                                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+                                <button type="button" class="btn-icon-eye" data-toggle-password="login-password" aria-label="Show password">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <label class="auth-check">
+                            <input type="checkbox" name="remember" value="1">
+                            Remember my session for 30 days
+                        </label>
+
+                        <button type="submit" class="btn-primary">
+                            Sign In
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6"/>
+                            </svg>
+                        </button>
+
+                        <p class="auth-switch">
+                            If you have no account please,
+                            <button type="button" data-show="signup">Sign Up</button>
+                        </p>
+                    </form>
+
+                    <!-- Sign up -->
+                    <form id="form-signup" class="auth-panel auth-panel-hidden" action="#" method="get" novalidate>
+                        <h2 class="auth-form-title">Create Account</h2>
+                        <p class="auth-form-sub">Choose your role and register with your institutional email.</p>
+
+                        <span class="auth-field-label" id="label-role-signup">I am a...</span>
+                        <div class="auth-role-grid" role="group" aria-labelledby="label-role-signup">
+                            <button type="button" class="auth-role-btn signup-role" data-role="student" aria-pressed="true">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12v8H2v-8"/><path d="M6 12V7a6 6 0 0112 0v5"/><path d="M6 21h12"/></svg>
+                                Student
+                            </button>
+                            <button type="button" class="auth-role-btn signup-role" data-role="staff" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                                Staff
+                            </button>
+                            <button type="button" class="auth-role-btn signup-role" data-role="admin" aria-pressed="false">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="2"/></svg>
+                                Admin
+                            </button>
+                        </div>
+                        <input type="hidden" name="role" id="signup-role" value="student">
+
+                        <div class="auth-field">
+                            <label class="auth-field-label" for="signup-name">Full name</label>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <input id="signup-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="auth-field">
+                            <label class="auth-field-label" for="signup-email">Institutional email</label>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/>
+                                </svg>
+                                <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="e.g. name@student.uiu.ac.bd" required>
+                            </div>
+                        </div>
+
+                        <div class="auth-field">
+                            <label class="auth-field-label" for="signup-password">Password</label>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+                                </svg>
+                                <input id="signup-password" name="password" type="password" autocomplete="new-password" placeholder="Create a password" required minlength="6">
+                                <button type="button" class="btn-icon-eye" data-toggle-password="signup-password" aria-label="Show password">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="auth-field">
+                            <label class="auth-field-label" for="signup-password2">Confirm password</label>
+                            <div class="auth-input-wrap">
+                                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+                                </svg>
+                                <input id="signup-password2" name="password2" type="password" autocomplete="new-password" placeholder="Repeat password" required>
+                                <button type="button" class="btn-icon-eye" data-toggle-password="signup-password2" aria-label="Show password">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <label class="auth-check">
+                            <input type="checkbox" name="terms" required>
+                            I agree to the terms of use and privacy policy
+                        </label>
+
+                        <button type="submit" class="btn-primary">
+                            Create account
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6"/>
+                            </svg>
+                        </button>
+
+                        <p class="auth-switch">
+                            Already registered?
+                            <button type="button" data-show="login">Sign In</button>
+                        </p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="auth-footer">
+        © 2026 United International University Canteen. All rights reserved.
+    </footer>
+
+    <script>
+(function () {
+    var DASHBOARDS = {
+        student: 'pages/student/student_dashboard.html',
+        staff: 'pages/staff/staff_dashboard.html',
+        admin: 'pages/Admin/admin_dashboard.html'
+    };
+
+    function setRole(formEl, role) {
+        var hidden = formEl.id === 'form-login'
+            ? document.getElementById('login-role')
+            : document.getElementById('signup-role');
+        formEl.querySelectorAll('.auth-role-btn').forEach(function (btn) {
+            var isOn = btn.getAttribute('data-role') === role;
+            btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+        });
+        if (hidden) hidden.value = role;
+    }
+
+    document.querySelector('#form-login .auth-role-grid').addEventListener('click', function (e) {
+        var btn = e.target.closest('.auth-role-btn');
+        if (!btn) return;
+        e.preventDefault();
+        setRole(document.getElementById('form-login'), btn.getAttribute('data-role'));
+    });
+
+    document.querySelector('#form-signup .auth-role-grid').addEventListener('click', function (e) {
+        var btn = e.target.closest('.auth-role-btn');
+        if (!btn) return;
+        e.preventDefault();
+        setRole(document.getElementById('form-signup'), btn.getAttribute('data-role'));
+    });
+
+    document.querySelectorAll('[data-show]').forEach(function (el) {
+        el.addEventListener('click', function () {
+            var mode = el.getAttribute('data-show');
+            var loginForm = document.getElementById('form-login');
+            var signupForm = document.getElementById('form-signup');
+            if (mode === 'signup') {
+                loginForm.classList.add('auth-panel-hidden');
+                signupForm.classList.remove('auth-panel-hidden');
+            } else {
+                signupForm.classList.add('auth-panel-hidden');
+                loginForm.classList.remove('auth-panel-hidden');
+            }
+        });
+    });
+
+    document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-toggle-password');
+            var input = document.getElementById(id);
+            if (!input) return;
+            input.type = input.type === 'password' ? 'text' : 'password';
+            btn.setAttribute('aria-label', input.type === 'password' ? 'Show password' : 'Hide password');
+        });
+    });
+
+    function goDashboard(role) {
+        var path = DASHBOARDS[role];
+        if (path) window.location.href = path;
+    }
+
+    document.getElementById('form-login').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var role = document.getElementById('login-role').value;
+        if (window.UIToast) window.UIToast.show('Signed in. Loading your dashboard…');
+        setTimeout(function () { goDashboard(role); }, 500);
+    });
+
+    document.getElementById('form-signup').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var p1 = document.getElementById('signup-password').value;
+        var p2 = document.getElementById('signup-password2').value;
+        if (p1 !== p2) {
+            if (window.UIToast) window.UIToast.show('Passwords do not match.');
+            return;
+        }
+        var role = document.getElementById('signup-role').value;
+        if (window.UIToast) window.UIToast.show('Welcome! Creating your session…');
+        setTimeout(function () { goDashboard(role); }, 500);
+    });
+})();
+    </script>
+    <script src="js/site.js" defer></script>
 </body>
 </html>

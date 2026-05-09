@@ -12,7 +12,7 @@ body {
 .container {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 40px;
+    padding: 0 3% 40px;
 }
 
 
@@ -21,16 +21,17 @@ body {
 .nav {
     display: flex;
     justify-content: space-between;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 20px;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 0;
 }
 
 .nav-pages {
     display: flex;
     align-items: center;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
 .nav-page a {
@@ -45,7 +46,10 @@ body {
     background-color: #e6e4e4;
     border-radius: 20px;
     padding: 10px 16px;
-    width: 400px;
+    width: auto;
+    flex: 1;
+    min-width: 220px;
+    max-width: 420px;
 }
 
 .search-icon {
@@ -95,6 +99,24 @@ body {
 .user-avatar img {
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .nav-search {
+        min-width: 0;
+        width: 100%;
+        max-width: none;
+    }
 }
 
 
@@ -158,12 +180,28 @@ body {
     cursor: pointer;
 }
 
+a.order-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
 .details-btn {
     padding: 14px 24px;
     border: none;
     background-color: white;
     border-radius: 12px;
     cursor: pointer;
+}
+
+a.details-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .hero-right h2 {
@@ -190,6 +228,16 @@ body {
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
+}
+
+a.optimize-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    background: #fff;
+    box-sizing: border-box;
 }
 
 
@@ -249,12 +297,18 @@ body {
     align-items: center;
 }
 
-.card-bottom button {
+.card-bottom button,
+.card-bottom a {
     border: none;
     background-color: #f2e3cf;
     padding: 10px 16px;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
 }
 
 
@@ -361,5 +415,32 @@ body {
     color: white;
     font-size: 24px;
     cursor: pointer;
+}
+
+a.add-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.nav-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-page-active a {
+    color: #f28c28;
+    font-weight: 700;
+}
+
+a.icon-btn {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 

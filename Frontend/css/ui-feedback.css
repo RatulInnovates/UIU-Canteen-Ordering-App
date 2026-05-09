@@ -1,0 +1,67 @@
+/* Toast popups + responsive tap targets (shared) */
+
+#ui-toast-root,
+.ui-toast-root {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    pointer-events: none;
+}
+
+.ui-toast {
+    pointer-events: auto;
+    max-width: min(92vw, 400px);
+    padding: 14px 20px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 1.4;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ui-toast--show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Primary actions: easier taps on small screens */
+@media (max-width: 600px) {
+    .btn-primary,
+    .place-btn,
+    .save-btn,
+    .order-btn,
+    .btn-add,
+    .btn-quick-ops,
+    .switch-btn,
+    .logout-btn-link {
+        min-height: 44px;
+    }
+
+    .auth-body .btn-primary {
+        width: 100%;
+    }
+
+    .checkout-layout .place-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}

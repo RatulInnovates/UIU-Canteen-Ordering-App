@@ -51,6 +51,15 @@ body {
     padding: 20px;
 }
 
+a.student-btn {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+}
+
 .student-btn{
     width: 100%;
     padding: 12px;

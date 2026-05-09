@@ -69,6 +69,15 @@ body {
     font-weight: bold;
 }
 
+a.student-btn {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+}
+
 
 .bottom-links {
     display: flex;

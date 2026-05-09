@@ -38,6 +38,11 @@ body {
     font-weight: 500;
 }
 
+.nav-page-active a {
+    color: #f28c28;
+    font-weight: 700;
+}
+
 
 
 .nav-right {
