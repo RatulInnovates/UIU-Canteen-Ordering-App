@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    /* background-color: #f0e6d2; */
+    /* Light background color matching the image */
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.nav-pages{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* Space between page links and search */
+}
+
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    background-color: #e6e4e4;
+    /* Light grey background */
+    border-radius: 20px;
+    /* Pill shape */
+    padding: 10px 16px;
+    /* Spacing inside the bar */
+    flex: 1;
+    max-width: 400px;
+    min-width: 180px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Styling for the magnifying glass icon */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #5c4e4e;
+    /* Dark brownish-grey to match the image */
+    margin-right: 10px;
+    flex-shrink: 0;
+    /* Prevents the icon from squishing */
+}
+
+/* Styling for the actual text input */
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    /* Removes the default browser focus ring */
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+}
+
+/* Styling the placeholder text specifically */
+.search-input::placeholder {
+    color: #8a8d93;
+    /* Muted blue-grey */
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* Space between each icon */
+}
+
+/* Common style for the icon buttons */
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Crucial for positioning the badge */
+    color: #5c4e4e;
+    /* Dark brownish-grey */
+}
+
+.icon-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* The orange notification dot on the cart */
+.cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 12px;
+    height: 12px;
+    background-color: #f28c28;
+    /* UIU Orange */
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    /* Gives it a cutout look if overlapping */
+}
+
+/* Styling for the user avatar */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Ensures the image stays perfectly round */
+    cursor: pointer;
+    background-color: #f0e6d2;
+    /* Light background color matching the image */
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Prevents the image from stretching */
+}

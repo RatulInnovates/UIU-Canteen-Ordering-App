@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIU Canteen | Staff Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/staff/staff_common.css">
+    <link rel="stylesheet" href="../../css/staff/staff_dashboard.css">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <h1 class="logo-title">UIU Canteen</h1>
+            <p class="logo-subtitle">STAFF PORTAL</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="staff_dashboard.html" class="nav-item active">
+                <span class="icon">🎛️</span> Dashboard
+            </a>
+            <a href="live_order_queue.html" class="nav-item">
+                <span class="icon">📋</span> Orders
+            </a>
+            <a href="menu_management.html" class="nav-item">
+                <span class="icon">🍴</span> Menu Management
+            </a>
+            <a href="staff_analytics.html" class="nav-item">
+                <span class="icon">📈</span> Analytics
+            </a>
+            <a href="staff_settings.html" class="nav-item">
+                <span class="icon">⚙️</span> Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="switch-btn">Switch to User Mode</button>
+            <a href="#" class="nav-item"><span class="icon">❓</span> Help Center</a>
+            <a href="#" class="nav-item logout-item"><span class="icon">🚪</span> Logout</a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+        <!-- LEFT COLUMN (Live Operations, Stats, Queue) -->
+        <div class="col-left">
+            <!-- Header -->
+            <div>
+                <h1 class="header-title">Live Operations</h1>
+                <p class="status-text">System status: <span class="status-highlight">Optimal Performance</span></p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="card stat-card">
+                    <div class="flex-between">
+                        <span style="font-size: 20px;">🎟️</span>
+                        <span class="pill pill-orange">+12% vs Yesterday</span>
+                    </div>
+                    <div class="stat-value">142</div>
+                    <div class="stat-label">ACTIVE TOKENS</div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="flex-between">
+                        <span style="font-size: 20px;">⏱️</span>
+                        <span class="pill pill-blue">Fast Processing</span>
+                    </div>
+                    <div class="stat-value">8.4<span style="font-size: 20px;">min</span></div>
+                    <div class="stat-label">AVG. PREP TIME</div>
+                </div>
+            </div>
+
+            <!-- Kitchen Queue -->
+            <div>
+                <h3 class="section-title">🍴 Current Kitchen Queue</h3>
+
+                <div class="queue-card flex-between">
+                    <div class="flex-row">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&h=100&fit=crop" class="food-img">
+                        <div>
+                            <h4 class="item-title">Chicken Teriyaki Bowl</h4>
+                            <p class="item-subtitle">TOKEN #892 • PREMIUM</p>
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="time-box">
+                            <p class="time-label">ELAPSED</p>
+                            <h3 class="time-value">04:12</h3>
+                        </div>
+                        <span class="pill pill-inqueue">IN-QUEUE</span>
+                    </div>
+                </div>
+
+                <div class="queue-card flex-between">
+                    <div class="flex-row">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=100&h=100&fit=crop" class="food-img">
+                        <div>
+                            <h4 class="item-title">Roasted Veg Medley</h4>
+                            <p class="item-subtitle">TOKEN #895 • REGULAR</p>
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="time-box">
+                            <p class="time-label">ELAPSED</p>
+                            <h3 class="time-value">01:45</h3>
+                        </div>
+                        <span class="pill pill-inqueue">IN-QUEUE</span>
+                    </div>
+                </div>
+
+                <div class="queue-card-ready flex-between">
+                    <div class="flex-row">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop" class="food-img">
+                        <div>
+                            <h4 class="item-title">Margherita Pizza</h4>
+                            <p class="item-subtitle">TOKEN #890 • READY</p>
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <div class="time-box">
+                            <p class="time-label">STATUS</p>
+                            <h3 class="status-ready">Waiting Pickup</h3>
+                        </div>
+                        <span class="pill pill-ready">READY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN (Widgets) -->
+        <div class="col-right">
+            <!-- Supervisor Widget -->
+            <div class="supervisor-box flex-between">
+                <div style="text-align: right;">
+                    <p class="time-label">SHIFT SUPERVISOR</p>
+                    <h4 class="item-title" style="margin: 0;">Rahat Ahmed</h4>
+                </div>
+                <div class="avatar">RA</div>
+            </div>
+
+            <!-- Urgent Box -->
+            <div class="card urgent-box">
+                <div class="flex-between">
+                    <span style="font-size: 24px;">⚠️</span>
+                    <span class="pill urgent-pill">Urgent</span>
+                </div>
+                <h2 class="urgent-number">07</h2>
+                <p style="font-size: 13px; font-weight: 700; color: #D14300; margin-top: 5px;">UNCLAIMED ORDERS</p>
+            </div>
+
+            <!-- Critical Alerts -->
+            <div class="card alerts-box">
+                <h3 class="alerts-title">CRITICAL ALERTS</h3>
+
+                <div class="flex-row" style="margin-bottom: 16px;">
+                    <div class="alert-icon icon-red">📦</div>
+                    <div>
+                        <h4 class="item-title">Low Stock: Rice</h4>
+                        <p class="item-subtitle">Depletion in 20 mins.</p>
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="alert-icon icon-orange">🔔</div>
+                    <div>
+                        <h4 class="item-title">Token #845 Overdue</h4>
+                        <p class="item-subtitle">Ready for 15+ mins.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Box -->
+            <div class="card inventory-box">
+                <h3 class="alerts-title">INVENTORY PULSE</h3>
+                <div class="flex-between" style="font-size: 12px; font-weight: 700;">
+                    <span>DAILY CAPACITY</span>
+                    <span>74%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p style="font-size: 13px; margin-bottom: 15px; line-height: 1.4; color: rgba(255,255,255,0.9);">
+                    Lunch rush incoming. Enable "Quick Checkout".
+                </p>
+                <button class="btn-quick-ops">Manage Quick-Ops</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

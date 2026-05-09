@@ -1,0 +1,158 @@
+/* staff_common.css - Shared layout and sidebar styles for all staff pages */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #FAFAFA;
+    color: #1C1B1B;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR STYLES --- */
+.sidebar {
+    width: 220px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+}
+
+.brand {
+    margin-bottom: 32px;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1C1B1B;
+    margin-bottom: 4px;
+}
+
+.logo-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #8C6A4B;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation Links */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #6B6B6B;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: #FAFAFA;
+    color: #1C1B1B;
+}
+
+.nav-item.active {
+    color: #F57C00;
+    background-color: #FFF5EC;
+    border-right: 3px solid #F57C00;
+    border-radius: 8px 0 0 8px;
+}
+
+.nav-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Sidebar Bottom Section */
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #EAEAEA;
+}
+
+.switch-btn {
+    background: #F4F0EE;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1C1B1B;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease;
+}
+
+.switch-btn:hover {
+    background: #EAEAEA;
+}
+
+.logout-item {
+    color: #D32F2F;
+}
+
+.logout-item:hover {
+    background-color: #FFEBEE;
+    color: #B71C1C;
+}
+
+/* --- COMMON UTILITIES --- */
+.main-content {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #EAEAEA;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pill {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
