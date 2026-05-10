@@ -40,7 +40,7 @@
     window.UIToast = { show: showToast };
 
     document.addEventListener('click', function (e) {
-        var logout = e.target.closest('a.logout-btn-link');
+        var logout = e.target.closest('a.logout-btn-link, a.logout-item');
         if (logout) {
             e.preventDefault();
             var url = logout.getAttribute('href') || 'index.html';
