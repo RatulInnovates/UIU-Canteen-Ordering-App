@@ -11,36 +11,24 @@
 
 <div class="app-container">
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="brand">
-            <h1 class="logo-title">UIU Canteen</h1>
-            <p class="logo-subtitle">STAFF PORTAL</p>
+    <div class="left">
+        <div class="navHead">
+            <div class="logo-title">UIU Canteen</div>
+            <div class="logo-subtitle">Staff Portal</div>
         </div>
-
-        <nav class="nav-menu">
-            <a href="staff_dashboard.html" class="nav-item">
-                <span class="icon">🎛️</span> Dashboard
-            </a>
-            <a href="live_order_queue.html" class="nav-item active">
-                <span class="icon">📋</span> Orders
-            </a>
-            <a href="menu_management.html" class="nav-item">
-                <span class="icon">🍴</span> Menu Management
-            </a>
-            <a href="staff_analytics.html" class="nav-item">
-                <span class="icon">📈</span> Analytics
-            </a>
-            <a href="staff_settings.html" class="nav-item">
-                <span class="icon">⚙️</span> Settings
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <button class="switch-btn">Switch to User Mode</button>
-            <a href="#" class="nav-item"><span class="icon">❓</span> Help Center</a>
-            <a href="#" class="nav-item logout-item"><span class="icon">🚪</span> Logout</a>
+        <div class="nav">
+            <a class="nav-item" href="staff_dashboard.html"><span>🎛️</span> Dashboard</a>
+            <a class="nav-item clicked" href="live_order_queue.html"><span>📋</span> Orders</a>
+            <a class="nav-item" href="menu_management.html"><span>🍴</span> Menu Management</a>
+            <a class="nav-item" href="staff_analytics.html"><span>📈</span> Analytics</a>
+            <a class="nav-item" href="staff_settings.html"><span>⚙️</span> Settings</a>
         </div>
-    </aside>
+        <div class="nav-bottom">
+            <button class="switch-btn"><span>⇆</span> Switch to User Mode</button>
+            <a class="nav-item" href="#"><span>❓</span> Help Center</a>
+            <a class="nav-item logout" href="#"><span>🚪</span> Logout</a>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
@@ -75,7 +63,7 @@
                 <div class="card basic-card">
                     <div class="card-top">
                         <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">&rsaquo;</p>
+                        <p class="chevron">></p>
                     </div>
                     <h3 class="token-number">#4482</h3>
                     <div class="customer-info">
@@ -93,7 +81,7 @@
                 <div class="card basic-card">
                     <div class="card-top">
                         <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">&rsaquo;</p>
+                        <p class="chevron">></p>
                     </div>
                     <h3 class="token-number">#4483</h3>
                     <div class="customer-info">
@@ -135,7 +123,7 @@
                             <span>60% DONE</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%;"></div>
+                            <progress value="60" max="100" style="accent-color: #84532C;"></progress>
                         </div>
                     </div>
                     
@@ -148,7 +136,7 @@
                     </div>
                     <h3 class="token-number">#4475</h3>
                     <div class="customer-info">
-                        <div class="cust-av av-text">RK</div>
+                        <div class="cust-av">RK</div>
                         <p class="cust-name">Rifat Kabir</p>
                     </div>
                     <p class="items-list">Pasta Alfredo, Cold Coffee</p>

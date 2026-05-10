@@ -11,36 +11,24 @@
 
 <div class="app-container">
     <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-        <div class="brand">
-            <h1 class="logo-title">UIU Canteen</h1>
-            <p class="logo-subtitle">STAFF PORTAL</p>
+    <div class="left">
+        <div class="navHead">
+            <div class="logo-title">UIU Canteen</div>
+            <div class="logo-subtitle">Staff Portal</div>
         </div>
-
-        <nav class="nav-menu">
-            <a href="staff_dashboard.html" class="nav-item active">
-                <span class="icon">🎛️</span> Dashboard
-            </a>
-            <a href="live_order_queue.html" class="nav-item">
-                <span class="icon">📋</span> Orders
-            </a>
-            <a href="menu_management.html" class="nav-item">
-                <span class="icon">🍴</span> Menu Management
-            </a>
-            <a href="staff_analytics.html" class="nav-item">
-                <span class="icon">📈</span> Analytics
-            </a>
-            <a href="staff_settings.html" class="nav-item">
-                <span class="icon">⚙️</span> Settings
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <button class="switch-btn">Switch to User Mode</button>
-            <a href="#" class="nav-item"><span class="icon">❓</span> Help Center</a>
-            <a href="#" class="nav-item logout-item"><span class="icon">🚪</span> Logout</a>
+        <div class="nav">
+            <a class="nav-item clicked" href="staff_dashboard.html"><span>🎛️</span> Dashboard</a>
+            <a class="nav-item" href="live_order_queue.html"><span>📋</span> Orders</a>
+            <a class="nav-item" href="menu_management.html"><span>🍴</span> Menu Management</a>
+            <a class="nav-item" href="staff_analytics.html"><span>📈</span> Analytics</a>
+            <a class="nav-item" href="staff_settings.html"><span>⚙️</span> Settings</a>
         </div>
-    </aside>
+        <div class="nav-bottom">
+            <button class="switch-btn"><span>⇆</span> Switch to User Mode</button>
+            <a class="nav-item" href="#"><span>❓</span> Help Center</a>
+            <a class="nav-item logout" href="#"><span>🚪</span> Logout</a>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT AREA -->
     <main class="main-content">
@@ -179,9 +167,11 @@
                     <span>DAILY CAPACITY</span>
                     <span>74%</span>
                 </div>
+                
                 <div class="progress-bar">
-                    <div class="progress-fill"></div>
+                    <progress value="60" max="100" style="accent-color: #D32F2F;"></progress>
                 </div>
+                
                 <p style="font-size: 13px; margin-bottom: 15px; line-height: 1.4; color: rgba(255,255,255,0.9);">
                     Lunch rush incoming. Enable "Quick Checkout".
                 </p>
