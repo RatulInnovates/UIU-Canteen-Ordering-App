@@ -1,58 +1,24 @@
-.conteiner{
- width: 100%;
- height: 100%;
- display: flex;
- background-color: #FAFAF9;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',Arial,sans-serif;
 }
 
-.sidebar {
-    width: 240px;
-    background: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    background:#FCF9F8;
 }
 
-.logo { padding: 20px; }
-.logo-title { font-size: 20px; font-weight: bold; }
-.logo-sub { font-size: 12px; color: gray; }
-
-.menu { display: flex; flex-direction: column; padding-bottom: 250px; }
-
-.menu-item {
-    text-decoration: none;
-    color: black;
-    padding: 14px 18px;
-    font-size: 14px;
+.app-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    background:#FAFAF9;
 }
-.menu-item.active {
-    background: white;
-    border-left: 4px solid orange;
-    font-weight: bold;
-    color: orange;
-}
-.menu-item:hover { background: #e8e8e8; }
 
-.sidebar-bottom { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
-
-.bottom-links { display: flex; flex-direction: column; gap: 10px; }
-.bottom-link-item { color: gray; text-decoration: none; font-size: 13px; }
-.bottom-link-item:hover { color: #333; }
-
-.student-btn {
-    width: 100%;
-    padding: 12px;
-    background: #1a1a2e;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-}
-.student-btn:hover { background: #2a2a4e; }
 
 .right {
     display: flex;
@@ -184,69 +150,7 @@
 }
 
 /* ACCOUNT STATUS CARD */
-.account-status-card {
-    background: #1a3a5c;
-    border-radius: 14px;
-    padding: 24px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
 
-.account-status-label {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.55);
-}
-
-.account-status-value {
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    line-height: 1.2;
-}
-
-.account-login-row,
-.account-device-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.account-login-label,
-.account-device-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.55);
-}
-
-.account-login-value {
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-}
-
-.account-device-value {
-    font-size: 13px;
-    font-weight: bold;
-    color: #5bc8f5;
-}
-
-.session-btn {
-    width: 100%;
-    padding: 12px;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 4px;
-}
-.session-btn:hover { background: rgba(255,255,255,0.18); }
 
 .bottom-row {
     display: grid;
