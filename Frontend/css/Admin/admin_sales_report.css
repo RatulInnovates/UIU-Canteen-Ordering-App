@@ -239,7 +239,7 @@ a.student-btn {
 
 .stats-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     padding: 0 25px 20px 25px;
 }
