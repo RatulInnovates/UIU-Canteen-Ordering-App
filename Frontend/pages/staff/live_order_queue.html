@@ -6,74 +6,29 @@
     <title>Live Order Queue</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/staff/live_order_queue.css">
-    <link rel="stylesheet" href="../../css/ui-feedback.css">
 </head>
 <body>
 
 <div class="app-container">
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="brand">
-            <h1 class="logo-title">UIU Canteen</h1>
-            <p class="logo-subtitle">STAFF PORTAL</p>
+    <div class="left">
+        <div class="navHead">
+            <div class="logo-title">UIU Canteen</div>
+            <div class="logo-subtitle">Staff Portal</div>
         </div>
-
-        <nav class="nav-menu">
-            <a href="staff_dashboard.html" class="nav-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                </span> 
-                Dashboard
-            </a>
-            <a href="live_order_queue.html" class="nav-item active">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                </span> 
-                Orders
-            </a>
-            <a href="menu_management.html" class="nav-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                </span> 
-                Menu Management
-            </a>
-            <a href="staff_analytics.html" class="nav-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                </span> 
-                Analytics
-            </a>
-            <a href="staff_settings.html" class="nav-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                </span> 
-                Settings
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <a href="../../index.html" class="nav-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                </span>
-                Help Center
-            </a>
-            <div class="user-profile">
-                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop" alt="Alex Jenkins" class="avatar">
-                <div class="user-info">
-                    <p class="user-name">Alex Jenkins</p>
-                    <p class="user-role">Floor Manager</p>
-                </div>
-            </div>
-            <a href="../student/student_dashboard.html" class="switch-btn">SWITCH TO USER MODE</a>
-            <a href="../../index.html" class="nav-item logout-item">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                </span>
-                Logout
-            </a>
+        <div class="nav">
+            <a class="nav-item" href="staff_dashboard.html"><span>🎛️</span> Dashboard</a>
+            <a class="nav-item clicked" href="live_order_queue.html"><span>📋</span> Orders</a>
+            <a class="nav-item" href="menu_management.html"><span>🍴</span> Menu Management</a>
+            <a class="nav-item" href="staff_analytics.html"><span>📈</span> Analytics</a>
+            <a class="nav-item" href="staff_settings.html"><span>⚙️</span> Settings</a>
         </div>
-    </aside>
+        <div class="nav-bottom">
+            <button class="switch-btn"><span>⇆</span> Switch to User Mode</button>
+            <a class="nav-item" href="#"><span>❓</span> Help Center</a>
+            <a class="nav-item logout" href="#"><span>🚪</span> Logout</a>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
@@ -95,6 +50,11 @@
             </div>
         </header>
 
+        <!-- SEARCH & FILTER QUEUE CONTROLS -->
+        <div class="queue-search-container">
+            <input type="text" placeholder="🔍 Search by Token # or Customer Name..." class="board-search-field">
+        </div>
+
         <!-- KANBAN BOARD -->
         <div class="board">
             
@@ -102,13 +62,13 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot incoming-dot"></span> INCOMING</div>
-                    <div class="col-count">08</div>
+                    <div class="col-count count-incoming">08</div>
                 </div>
                 
                 <div class="card basic-card">
                     <div class="card-top">
                         <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">&rsaquo;</p>
+                        <p class="chevron">></p>
                     </div>
                     <h3 class="token-number">#4482</h3>
                     <div class="customer-info">
@@ -119,14 +79,14 @@
                     </div>
                     <div class="card-bottom">
                         <p class="item-meta">2 Items • Just now</p>
-                        <button class="btn btn-prepare">Prepare</button>
+                        <button class="btn btn-start-prepare">Start Preparing</button>
                     </div>
                 </div>
                 
                 <div class="card basic-card">
                     <div class="card-top">
                         <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">&rsaquo;</p>
+                        <p class="chevron">></p>
                     </div>
                     <h3 class="token-number">#4483</h3>
                     <div class="customer-info">
@@ -137,7 +97,7 @@
                     </div>
                     <div class="card-bottom">
                         <p class="item-meta">5 Items • 2m ago</p>
-                        <button class="btn btn-prepare">Prepare</button>
+                        <button class="btn btn-start-prepare">Start Preparing</button>
                     </div>
                 </div>
             </div>
@@ -146,7 +106,7 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot preparing-dot"></span> PREPARING</div>
-                    <div class="col-count preparing-count">03</div>
+                    <div class="col-count count-preparing">03</div>
                 </div>
                 
                 <div class="card active-prep-card">
@@ -168,23 +128,37 @@
                             <span>60% DONE</span>
                         </div>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%;"></div>
+                            <progress value="60" max="100" style="accent-color: #84532C;"></progress>
                         </div>
                     </div>
                     
                     <button class="btn btn-ready">Mark as Ready</button>
                 </div>
 
-                <div class="card basic-card">
+                <div class="card active-prep-card">
                     <div class="card-top">
                         <p class="token-label">TOKEN ID</p>
+                        <div class="time-left">8m left</div>
                     </div>
                     <h3 class="token-number">#4475</h3>
                     <div class="customer-info">
-                        <div class="cust-av av-text">RK</div>
+                        <div class="cust-av">RK</div>
                         <p class="cust-name">Rifat Kabir</p>
                     </div>
-                    <p class="items-list">Pasta Alfredo, Cold Coffee</p>
+
+                    <p class="items-list" style="margin-bottom: 12px;">Pasta Alfredo, Cold Coffee</p>
+
+                    <div class="progress-section">
+                        <div class="prog-labels">
+                            <span>CHEF: TARIQ</span>
+                            <span>30% DONE</span>
+                        </div>
+                        <div class="progress-bar">
+                            <progress value="30" max="100" style="accent-color: #84532C;"></progress>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-ready">Mark as Ready</button>
                 </div>
             </div>
 
@@ -192,7 +166,7 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot ready-dot"></span> READY FOR PICKUP</div>
-                    <div class="col-count ready-count">12</div>
+                    <div class="col-count count-ready">12</div>
                 </div>
                 
                 <div class="card highlight-ready-card">
@@ -202,69 +176,81 @@
                     <p class="token-label-center">TOKEN #4470</p>
                     <h3 class="customer-name-large">Mashrafe Bin Mortaza</h3>
                     <div class="action-buttons">
-                        <button class="btn btn-outline">REMIND</button>
-                        <button class="btn btn-solid">COLLECTED</button>
+                        <button class="btn btn-outline">Remind</button>
+                        <button class="btn btn-solid">Mark Collected</button>
                     </div>
                 </div>
 
-                <div class="card ready-list-card">
-                    <div class="token-circle circle-blue">71</div>
-                    <div class="ready-info">
-                        <p class="ready-name">Sakib Al Hasan</p>
-                        <p class="ready-time">Ready 4m ago</p>
+                <div class="card ready-list-card flex-between">
+                    <div class="flex-row">
+                        <div class="token-circle circle-blue">71</div>
+                        <div class="ready-info">
+                            <p class="ready-name">Sakib Al Hasan</p>
+                            <p class="ready-time">Ready 4m ago</p>
+                        </div>
                     </div>
-                    <div class="check-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <div class="action-buttons-small">
+                        <button class="btn btn-outline-small">Remind</button>
+                        <button class="btn btn-solid-small">Collected</button>
                     </div>
                 </div>
 
-                <div class="card ready-list-card">
-                    <div class="token-circle circle-dark">68</div>
-                    <div class="ready-info">
-                        <p class="ready-name">Mushfiqur Rahim</p>
-                        <p class="ready-time">Ready 12m ago</p>
+                <div class="card ready-list-card flex-between">
+                    <div class="flex-row">
+                        <div class="token-circle circle-dark">68</div>
+                        <div class="ready-info">
+                            <p class="ready-name">Mushfiqur Rahim</p>
+                            <p class="ready-time">Ready 12m ago</p>
+                        </div>
                     </div>
-                    <div class="check-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <div class="action-buttons-small">
+                        <button class="btn btn-outline-small">Remind</button>
+                        <button class="btn btn-solid-small">Collected</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 4: COMPLETED -->
+            <div class="board-column">
+                <div class="col-header">
+                    <div class="col-title"><span class="dot completed-dot"></span> COMPLETED</div>
+                    <div class="col-count count-completed">142</div>
+                </div>
+                
+                <div class="card completed-card">
+                    <div class="card-top">
+                        <p class="token-label">TOKEN ID</p>
+                    </div>
+                    <h3 class="token-number">#4465</h3>
+                    <div class="customer-info">
+                        <div class="cust-av">MR</div>
+                        <p class="cust-name">Mushfiqur Rahim</p>
+                    </div>
+                    <div class="card-bottom">
+                        <p class="item-meta">3 Items • Delivered 5m ago</p>
+                        <span class="pill pill-completed">Collected</span>
+                    </div>
+                </div>
+
+                <div class="card completed-card">
+                    <div class="card-top">
+                        <p class="token-label">TOKEN ID</p>
+                    </div>
+                    <h3 class="token-number">#4462</h3>
+                    <div class="customer-info">
+                        <div class="cust-av">TI</div>
+                        <p class="cust-name">Tamim Iqbal</p>
+                    </div>
+                    <div class="card-bottom">
+                        <p class="item-meta">1 Item • Delivered 12m ago</p>
+                        <span class="pill pill-completed">Collected</span>
                     </div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- BOTTOM METRICS -->
-        <div class="bottom-metrics">
-            <div class="metric-card rush-card">
-                <p class="metric-label rush-label">RUSH PREDICTION</p>
-                <h3 class="metric-title">High Demand Expected</h3>
-                <p class="metric-desc">Lunch hour starts in 15 minutes. Ensure all preparation stations are manned.</p>
-                <div class="rush-actions">
-                    <button class="btn btn-dark">View Schedule</button>
-                    <button class="btn btn-primary">Boost Capacity</button>
-                </div>
-            </div>
-
-            <div class="metric-card stat-card">
-                <h2 class="stat-number">12.4m</h2>
-                <p class="stat-label">AVG. WAIT TIME</p>
-                <p class="stat-trend green">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-                    2.1m vs yesterday
-                </p>
-            </div>
-
-            <div class="metric-card stat-card">
-                <h2 class="stat-number">142</h2>
-                <p class="stat-label">COMPLETED TODAY</p>
-                <p class="stat-trend brown">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                    Peak performance
-                </p>
-            </div>
         </div>
     </main>
 </div>
 
-<script src="../../js/site.js" defer></script>
 </body>
 </html>

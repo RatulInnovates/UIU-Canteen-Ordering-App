@@ -63,7 +63,7 @@ body{
 
 .profile-row {
     display: grid;
-    grid-template-columns: 1fr 260px;
+    grid-template-columns: 1fr ;
     gap: 20px;
     align-items: stretch;
 }
@@ -154,7 +154,7 @@ body{
 
 .bottom-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
     align-items: stretch;
 }
