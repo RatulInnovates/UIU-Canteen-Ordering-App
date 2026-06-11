@@ -6,33 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/staff/staff.setting.css">
+    <link rel="stylesheet" href="../../css/staff/live_order_queue.css">
+
 </head>
 
 <body>
-    <div class="conteiner">
-        <div class="sidebar">
-            <div class="logo">
-                <div class="logo-title">UIU Canteen</div>
-                <div class="logo-sub">STAFF PORTAL</div>
+    <div class="app-container">
+        
+        <aside class="sidebar" aria-label="Staff navigation">
+            <div class="brand">
+                <h1 class="logo-title">UIU Canteen</h1>
+                <p class="logo-subtitle">STAFF PORTAL</p>
             </div>
 
-            <div class="menu">
-                <a href="staff_dashboard.html" class="menu-item">📊 Dashboard</a>
-                <a href="live_order_queue.html" class="menu-item">🛍️ Orders</a>
-                <a href="menu_management.html" class="menu-item">🍴 Menu Management</a>
-                <a href="staff_analytics.html" class="menu-item">📈 Analytics</a>
-                <a href="staff_settings.html" class="menu-item active">⚙ Settings</a>
-            </div>
+            <nav class="nav-menu">
+                <a href="staff_dashboard.html" class="nav-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </span>
+                    Dashboard
+                </a>
+                <a href="live_order_queue.html" class="nav-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </span>
+                    Orders
+                </a>
+                <a href="menu_management.html" class="nav-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </span>
+                    Menu Management
+                </a>
+                <a href="staff_analytics.html" class="nav-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </span>
+                    Analytics
+                </a>
+                <a href="staff_settings.html" class="nav-item active">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </span>
+                    Settings
+                </a>
+            </nav>
 
             <div class="sidebar-bottom">
-                <div class="bottom-links">
-                    <a class="bottom-link-item" href="#">🔵 Help Center</a>
-                    <a class="bottom-link-item" href="#">⬆ Logout</a>
-                </div>
-                <button class="student-btn">SWITCH TO USER MODE</button>
-            </div>
-        </div>
+                <a href="../student/student_dashboard.html" class="switch-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F57C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></polyline><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+                    Switch to User Mode
+                </a>
 
+                <a href="../../index.html" class="nav-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </span>
+                    Help Center
+                </a>
+
+                <a href="../../index.html" class="nav-item logout-item">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </span>
+                    Logout
+                </a>
+            </div>
+        </aside>
 
         <div class="right">
 
@@ -93,19 +133,7 @@
                     </div>
 
 
-                    <div class="account-status-card">
-                        <div class="account-status-label">ACCOUNT STATUS</div>
-                        <div class="account-status-value">Verified<br>Manager</div>
-                        <div class="account-login-row">
-                            <span class="account-login-label">Last Login</span>
-                            <span class="account-login-value">Today, 06:45 AM</span>
-                        </div>
-                        <div class="account-device-row">
-                            <span class="account-device-label">Device Count</span>
-                            <span class="account-device-value">2 Active</span>
-                        </div>
-                        <button class="session-btn">Session Management</button>
-                    </div>
+                 
 
                 </div>
 
