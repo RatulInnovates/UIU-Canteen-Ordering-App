@@ -169,6 +169,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    border: 1px solid #C8E6C9;
 }
 
 .live-dot {
@@ -205,6 +206,8 @@ body {
 .board {
     display: flex;
     gap: 16px;
+    flex: 1;
+    min-height: 0;
 }
 
 .board-column {
@@ -212,6 +215,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: #F4F0EE;
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .col-header {
@@ -247,6 +255,7 @@ body {
 .incoming-dot { background-color: #F57C00; }
 .preparing-dot { background-color: #8C6A4B; }
 .ready-dot { background-color: #00B4FF; }
+.completed-dot { background-color: #4CAF50; }
 
 /* CARDS */
 .card {
@@ -259,7 +268,8 @@ body {
 }
 
 .basic-card, .active-prep-card {
-    height: 165px;
+    height: auto;
+    min-height: 165px;
     justify-content: space-between;
 }
 
@@ -462,83 +472,139 @@ body {
     justify-content: center;
 }
 
-/* BOTTOM METRICS */
-.bottom-metrics {
-    display: flex;
-    gap: 16px;
-    margin-top: 10px;
+
+
+/* QUEUE SEARCH STYLING */
+.queue-search-container {
+    margin-bottom: 16px;
+    width: 100%;
 }
 
-.metric-card {
+.board-search-field {
+    width: 100%;
+    padding: 12px 16px;
     border: 1px solid #EAEAEA;
-    background: #FFFFFF;
     border-radius: 8px;
-    padding: 16px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font-size: 14px;
+    outline: none;
+    background: #FFFFFF;
+    color: #1C1B1B;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.rush-card {
-    background: #2D2A28;
-    color: #FFF;
+.board-search-field:focus {
+    border-color: #F57C00;
+    box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.1);
 }
 
-.rush-label {
-    font-size: 10px;
-    color: #AAA;
-    margin-bottom: 8px;
-}
-
-.metric-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.metric-desc {
-    font-size: 11px;
-    color: #CCC;
-    margin-bottom: 12px;
-}
-
-.rush-actions {
-    display: flex;
-    gap: 8px;
-}
-
-.btn-dark {
-    background: #444;
-    color: #FFF;
+/* BUTTONS & BADGES */
+.btn-start-prepare {
+    background: #FFF5EC;
+    color: #F57C00;
     padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.btn-primary {
-    background: #F57C00;
-    color: #FFF;
-    padding: 6px 12px;
+.btn-start-prepare:hover {
+    background: #FFE5D0;
 }
 
-.stat-card {
-    text-align: center;
+.btn-ready {
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.stat-number {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 4px;
+.btn-ready:hover {
+    background: #765538;
 }
 
-.stat-label {
+.btn-outline {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-outline:hover {
+    background: #F5F5F5;
+}
+
+.btn-solid {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-solid:hover {
+    background: #004D70;
+}
+
+/* SMALL ACTION BUTTONS */
+.action-buttons-small {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-outline-small {
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    padding: 6px 10px;
     font-size: 10px;
-    color: #888;
-    margin-bottom: 8px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s;
 }
 
-.stat-trend {
-    font-size: 11px;
-    font-weight: 600;
+.btn-outline-small:hover {
+    background: #F5F5F5;
 }
-.stat-trend.green { color: #2E7D32; }
-.stat-trend.brown { color: #8C6A4B; }
+
+.btn-solid-small {
+    background: #00658F;
+    color: #FFF;
+    border: none;
+    padding: 6px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-solid-small:hover {
+    background: #004D70;
+}
+
+/* COLORED COLUMN HEADERS */
+.count-incoming {
+    background: #FFF5EC !important;
+    color: #F57C00 !important;
+}
+
+.count-preparing {
+    background: #F5E6DB !important;
+    color: #8C6A4B !important;
+}
+
+.count-ready {
+    background: #E8F5E9 !important;
+    color: #2E7D32 !important;
+}
+
+.count-completed {
+    background: #E8F5E9 !important;
+    color: #2E7D32 !important;
+}
+
+.completed-card {
+    border-left: 3px solid #2E7D32;
+    height: 125px;
+    justify-content: space-between;
+}
+
+.pill-completed {
+    background: #E8F5E9;
+    color: #2E7D32;
+}

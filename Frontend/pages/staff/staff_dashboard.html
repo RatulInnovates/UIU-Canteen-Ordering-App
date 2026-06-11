@@ -44,17 +44,7 @@
             <div class="stats-row">
                 <div class="card stat-card">
                     <div class="flex-between">
-                        <span style="font-size: 20px;">🎟️</span>
-                        <span class="pill pill-orange">+12% vs Yesterday</span>
-                    </div>
-                    <div class="stat-value">142</div>
-                    <div class="stat-label">ACTIVE TOKENS</div>
-                </div>
-
-                <div class="card stat-card">
-                    <div class="flex-between">
                         <span style="font-size: 20px;">⏱️</span>
-                        <span class="pill pill-blue">Fast Processing</span>
                     </div>
                     <div class="stat-value">8.4<span style="font-size: 20px;">min</span></div>
                     <div class="stat-label">AVG. PREP TIME</div>
@@ -64,6 +54,16 @@
             <!-- Kitchen Queue -->
             <div>
                 <h3 class="section-title">🍴 Current Kitchen Queue</h3>
+
+                <!-- Search & Filter Controls -->
+                <div class="queue-controls">
+                    <input type="text" placeholder="🔍 Search Token # or Name..." class="search-field">
+                    <select class="filter-field">
+                        <option value="all">All Categories</option>
+                        <option value="premium">Premium</option>
+                        <option value="regular">Regular</option>
+                    </select>
+                </div>
 
                 <div class="queue-card flex-between">
                     <div class="flex-row">
@@ -99,22 +99,6 @@
                     </div>
                 </div>
 
-                <div class="queue-card-ready flex-between">
-                    <div class="flex-row">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop" class="food-img">
-                        <div>
-                            <h4 class="item-title">Margherita Pizza</h4>
-                            <p class="item-subtitle">TOKEN #890 • READY</p>
-                        </div>
-                    </div>
-                    <div class="flex-row">
-                        <div class="time-box">
-                            <p class="time-label">STATUS</p>
-                            <h3 class="status-ready">Waiting Pickup</h3>
-                        </div>
-                        <span class="pill pill-ready">READY</span>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -129,53 +113,51 @@
                 <div class="avatar">RA</div>
             </div>
 
-            <!-- Urgent Box -->
-            <div class="card urgent-box">
-                <div class="flex-between">
-                    <span style="font-size: 24px;">⚠️</span>
-                    <span class="pill urgent-pill">Urgent</span>
+            <!-- Kitchen Stations Box -->
+            <div class="card stations-box">
+                <h3 class="stations-title">KITCHEN STATIONS</h3>
+                <div class="station-row flex-between">
+                    <span class="station-name">🍳 Station A (Hot Meals)</span>
+                    <span class="status-badge active-badge">Active</span>
                 </div>
-                <h2 class="urgent-number">07</h2>
-                <p style="font-size: 13px; font-weight: 700; color: #D14300; margin-top: 5px;">UNCLAIMED ORDERS</p>
-            </div>
-
-            <!-- Critical Alerts -->
-            <div class="card alerts-box">
-                <h3 class="alerts-title">CRITICAL ALERTS</h3>
-
-                <div class="flex-row" style="margin-bottom: 16px;">
-                    <div class="alert-icon icon-red">📦</div>
-                    <div>
-                        <h4 class="item-title">Low Stock: Rice</h4>
-                        <p class="item-subtitle">Depletion in 20 mins.</p>
-                    </div>
+                <div class="station-row flex-between">
+                    <span class="station-name">🍹 Station B (Drinks & Snacks)</span>
+                    <span class="status-badge active-badge">Active</span>
                 </div>
-
-                <div class="flex-row">
-                    <div class="alert-icon icon-orange">🔔</div>
-                    <div>
-                        <h4 class="item-title">Token #845 Overdue</h4>
-                        <p class="item-subtitle">Ready for 15+ mins.</p>
-                    </div>
+                <div class="station-row flex-between">
+                    <span class="station-name">🍕 Station C (Oven/Baking)</span>
+                    <span class="status-badge idle-badge">Idle</span>
                 </div>
             </div>
 
-            <!-- Inventory Box -->
-            <div class="card inventory-box">
-                <h3 class="alerts-title">INVENTORY PULSE</h3>
-                <div class="flex-between" style="font-size: 12px; font-weight: 700;">
-                    <span>DAILY CAPACITY</span>
-                    <span>74%</span>
+            <!-- Manual Order Entry Box -->
+            <div class="card manual-order-box">
+                <h3 class="manual-order-title">🎟️ MANUAL ORDER ENTRY</h3>
+                <div class="form-group">
+                    <label class="form-label">Select Item</label>
+                    <select class="form-input">
+                        <option value="">-- Choose Menu Item --</option>
+                        <option value="chicken">Chicken Teriyaki Bowl</option>
+                        <option value="veg">Roasted Veg Medley</option>
+                        <option value="pizza">Margherita Pizza</option>
+                        <option value="pasta">Pasta Alfredo</option>
+                        <option value="coffee">Cold Coffee</option>
+                    </select>
                 </div>
-                
-                <div class="progress-bar">
-                    <progress value="60" max="100" style="accent-color: #D32F2F;"></progress>
+                <div class="form-row-grid">
+                    <div class="form-group">
+                        <label class="form-label">Token #</label>
+                        <input type="number" placeholder="896" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Type</label>
+                        <select class="form-input">
+                            <option value="regular">Regular</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
                 </div>
-                
-                <p style="font-size: 13px; margin-bottom: 15px; line-height: 1.4; color: rgba(255,255,255,0.9);">
-                    Lunch rush incoming. Enable "Quick Checkout".
-                </p>
-                <button class="btn-quick-ops">Manage Quick-Ops</button>
+                <button type="button" class="btn-create-order">Create Live Order</button>
             </div>
         </div>
     </main>
