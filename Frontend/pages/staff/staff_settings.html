@@ -71,15 +71,15 @@
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">FULL PROFESSIONAL NAME</label>
-                                <input type="text" class="form-input" value="Alex Thompson">
+                                <input type="text" id="staffName" class="form-input" value="Alex Thompson">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">STAFF ID NUMBER</label>
-                                <input type="text" class="form-input" value="UIU-STF-2024-889">
+                                <input type="text" id="staffId" class="form-input" value="UIU-STF-2024-889">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">EMAIL ADDRESS</label>
-                                <input type="email" class="form-input" value="alex.t@uiu-canteen.edu">
+                                <input type="email" id="staffEmail" class="form-input" value="alex.t@uiu-canteen.edu">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">PASSWORD</label>
@@ -114,7 +114,7 @@
                                 <div class="notif-item-title">New Orders</div>
                                 <div class="notif-item-sub">Instant push alert for every new incoming order</div>
                             </div>
-                            <div class="toggle toggle-on">
+                            <div class="toggle toggle-on" id="notif-orders">
                                 <div class="toggle-knob"></div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                 <div class="notif-item-title">Stock Alerts</div>
                                 <div class="notif-item-sub">Notify when ingredients drop below threshold</div>
                             </div>
-                            <div class="toggle toggle-off">
+                            <div class="toggle toggle-off" id="notif-stock">
                                 <div class="toggle-knob"></div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                 <div class="notif-item-title">System Announcements</div>
                                 <div class="notif-item-sub">Critical canteen wide administrative updates</div>
                             </div>
-                            <div class="toggle toggle-on">
+                            <div class="toggle toggle-on" id="notif-sys">
                                 <div class="toggle-knob"></div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                 <div class="notif-item-title">Terminal Sound</div>
                                 <div class="notif-item-sub">Toggle audible chime on order completion</div>
                             </div>
-                            <div class="toggle toggle-off">
+                            <div class="toggle toggle-off" id="notif-sound">
                                 <div class="toggle-knob"></div>
                             </div>
                         </div>
@@ -176,6 +176,7 @@
         </div>
     </div>
 
+<script src="../../js/staff/staff_settings.js"></script>
 </body>
 
 </html>

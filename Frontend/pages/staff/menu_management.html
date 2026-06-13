@@ -44,11 +44,11 @@
         <div class="metrics-row">
             <div class="metric-card">
                 <div class="metric-label">ACTIVE DISHES</div>
-                <div class="metric-value">42</div>
+                <div class="metric-value" id="activeCount">0</div>
             </div>
             <div class="metric-card blue-card">
                 <div class="metric-label">SOLD OUT ITEMS</div>
-                <div class="metric-value">08</div>
+                <div class="metric-value" id="soldOutCount">0</div>
             </div>
         </div>
 
@@ -65,98 +65,42 @@
             </div>
         </div>
 
-        <div class="menu-list">
-            <!-- Item 1 -->
-            <div class="menu-item">
-                <div class="item-info">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&h=100&fit=crop"
-                        class="item-img" alt="Quinoa Bowl">
-                    <div class="item-details">
-                        <div class="item-title">Artisan Quinoa Bowl</div>
-                        <div class="item-desc">Quinoa, charred broccoli, kale,...</div>
-                    </div>
-                </div>
-                <div class="item-category">
-                    <div class="col-label">CATEGORY</div>
-                    <div class="cat-pill">Healthy</div>
-                </div>
-                <div class="item-price">
-                    <div class="col-label">PRICE</div>
-                    <div class="price-value"><span class="currency">$</span> 12.50</div>
-                </div>
-                <div class="item-availability">
-                    <div class="col-label">AVAILABILITY</div>
-                    <div class="toggle-switch active">
-                        <div class="toggle-circle"></div>
-                    </div>
-                    <div class="avail-status active-text">AVAILABLE</div>
-                </div>
-                <div class="item-actions">
-                    <span class="action-icon">✏️</span>
-                    <span class="action-icon">🗑️</span>
-                </div>
-            </div>
+        <div class="menu-list" id="menuList">
+            <!-- Items injected by JS -->
+        </div>
 
-            <!-- Item 2 -->
-            <div class="menu-item">
-                <div class="item-info">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=100&h=100&fit=crop"
-                        class="item-img" alt="Burger">
-                    <div class="item-details">
-                        <div class="item-title">Signature UIU Burger</div>
-                        <div class="item-desc">Wagyu beef, caramelized onions,...</div>
+        <!-- Add Item Modal -->
+        <div id="addModal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(5px);">
+            <div class="modal-content" style="background:#1e1e2d; color:#fff; margin:5% auto; padding:30px; border-radius:12px; width:500px; box-shadow:0 15px 30px rgba(0,0,0,0.3);">
+                <span class="close-btn" id="closeModalBtn" style="color:#aaa; float:right; font-size:28px; cursor:pointer;">&times;</span>
+                <h2 style="margin-top:0;">Add New Dish</h2>
+                <form id="addDishForm">
+                    <div style="margin-bottom:15px;">
+                        <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Dish Name</label>
+                        <input type="text" id="dishName" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;">
                     </div>
-                </div>
-                <div class="item-category">
-                    <div class="col-label">CATEGORY</div>
-                    <div class="cat-pill">Lunch</div>
-                </div>
-                <div class="item-price">
-                    <div class="col-label">PRICE</div>
-                    <div class="price-value"><span class="currency">$</span> 14.00</div>
-                </div>
-                <div class="item-availability">
-                    <div class="col-label">AVAILABILITY</div>
-                    <div class="toggle-switch">
-                        <div class="toggle-circle"></div>
+                    <div style="margin-bottom:15px;">
+                        <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Description</label>
+                        <textarea id="dishDesc" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;"></textarea>
                     </div>
-                    <div class="avail-status sold-out">SOLD OUT</div>
-                </div>
-                <div class="item-actions">
-                    <span class="action-icon">✏️</span>
-                    <span class="action-icon delete">🗑️</span>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="menu-item">
-                <div class="item-info">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=100&h=100&fit=crop"
-                        class="item-img" alt="Drink">
-                    <div class="item-details">
-                        <div class="item-title">Berry Blast Cooler</div>
-                        <div class="item-desc">Fresh forest berries, lime, sparklin...</div>
+                    <div style="margin-bottom:15px;">
+                        <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Price (৳)</label>
+                        <input type="number" step="0.01" id="dishPrice" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;">
                     </div>
-                </div>
-                <div class="item-category">
-                    <div class="col-label">CATEGORY</div>
-                    <div class="cat-pill">Drinks</div>
-                </div>
-                <div class="item-price">
-                    <div class="col-label">PRICE</div>
-                    <div class="price-value"><span class="currency">$</span> 04.50</div>
-                </div>
-                <div class="item-availability">
-                    <div class="col-label">AVAILABILITY</div>
-                    <div class="toggle-switch active">
-                        <div class="toggle-circle"></div>
+                    <div style="margin-bottom:15px;">
+                        <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Category</label>
+                        <select id="dishCategory" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;">
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch Specials">Lunch Specials</option>
+                            <option value="Beverages">Beverages</option>
+                        </select>
                     </div>
-                    <div class="avail-status active-text">AVAILABLE</div>
-                </div>
-                <div class="item-actions">
-                    <span class="action-icon">✏️</span>
-                    <span class="action-icon delete">🗑️</span>
-                </div>
+                    <div style="margin-bottom:15px;">
+                        <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Image URL</label>
+                        <input type="url" id="dishImage" style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;">
+                    </div>
+                    <button type="submit" style="background:#4caf50; color:white; padding:12px 20px; border:none; border-radius:8px; cursor:pointer; width:100%; font-weight:600;">Save Dish</button>
+                </form>
             </div>
         </div>
 
@@ -171,6 +115,7 @@
             </div>
         </div>
     </div>
+    <script src="../../js/staff/menu_management.js"></script>
 </body>
 
 </html>
