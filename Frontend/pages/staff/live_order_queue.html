@@ -62,43 +62,10 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot incoming-dot"></span> INCOMING</div>
-                    <div class="col-count count-incoming">08</div>
+                    <div class="col-count count-incoming" id="count-incoming">0</div>
                 </div>
-                
-                <div class="card basic-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">></p>
-                    </div>
-                    <h3 class="token-number">#4482</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </div>
-                        <p class="cust-name">Nawshin Zaman</p>
-                    </div>
-                    <div class="card-bottom">
-                        <p class="item-meta">2 Items • Just now</p>
-                        <button class="btn btn-start-prepare">Start Preparing</button>
-                    </div>
-                </div>
-                
-                <div class="card basic-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                        <p class="chevron">></p>
-                    </div>
-                    <h3 class="token-number">#4483</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </div>
-                        <p class="cust-name">Fahim Ahmed</p>
-                    </div>
-                    <div class="card-bottom">
-                        <p class="item-meta">5 Items • 2m ago</p>
-                        <button class="btn btn-start-prepare">Start Preparing</button>
-                    </div>
+                <div id="col-incoming">
+                    <!-- Items injected by JS -->
                 </div>
             </div>
 
@@ -106,59 +73,10 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot preparing-dot"></span> PREPARING</div>
-                    <div class="col-count count-preparing">03</div>
+                    <div class="col-count count-preparing" id="count-preparing">0</div>
                 </div>
-                
-                <div class="card active-prep-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                        <div class="time-left">5m left</div>
-                    </div>
-                    <h3 class="token-number">#4479</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </div>
-                        <p class="cust-name">Sadia Sultana</p>
-                    </div>
-                    
-                    <div class="progress-section">
-                        <div class="prog-labels">
-                            <span>CHEF: MIRAJ</span>
-                            <span>60% DONE</span>
-                        </div>
-                        <div class="progress-bar">
-                            <progress value="60" max="100" style="accent-color: #84532C;"></progress>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-ready">Mark as Ready</button>
-                </div>
-
-                <div class="card active-prep-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                        <div class="time-left">8m left</div>
-                    </div>
-                    <h3 class="token-number">#4475</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">RK</div>
-                        <p class="cust-name">Rifat Kabir</p>
-                    </div>
-
-                    <p class="items-list" style="margin-bottom: 12px;">Pasta Alfredo, Cold Coffee</p>
-
-                    <div class="progress-section">
-                        <div class="prog-labels">
-                            <span>CHEF: TARIQ</span>
-                            <span>30% DONE</span>
-                        </div>
-                        <div class="progress-bar">
-                            <progress value="30" max="100" style="accent-color: #84532C;"></progress>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-ready">Mark as Ready</button>
+                <div id="col-preparing">
+                    <!-- Items injected by JS -->
                 </div>
             </div>
 
@@ -166,47 +84,10 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot ready-dot"></span> READY FOR PICKUP</div>
-                    <div class="col-count count-ready">12</div>
+                    <div class="col-count count-ready" id="count-ready">0</div>
                 </div>
-                
-                <div class="card highlight-ready-card">
-                    <div class="bell-icon-wrapper">
-                        <svg class="bell-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                    </div>
-                    <p class="token-label-center">TOKEN #4470</p>
-                    <h3 class="customer-name-large">Mashrafe Bin Mortaza</h3>
-                    <div class="action-buttons">
-                        <button class="btn btn-outline">Remind</button>
-                        <button class="btn btn-solid">Mark Collected</button>
-                    </div>
-                </div>
-
-                <div class="card ready-list-card flex-between">
-                    <div class="flex-row">
-                        <div class="token-circle circle-blue">71</div>
-                        <div class="ready-info">
-                            <p class="ready-name">Sakib Al Hasan</p>
-                            <p class="ready-time">Ready 4m ago</p>
-                        </div>
-                    </div>
-                    <div class="action-buttons-small">
-                        <button class="btn btn-outline-small">Remind</button>
-                        <button class="btn btn-solid-small">Collected</button>
-                    </div>
-                </div>
-
-                <div class="card ready-list-card flex-between">
-                    <div class="flex-row">
-                        <div class="token-circle circle-dark">68</div>
-                        <div class="ready-info">
-                            <p class="ready-name">Mushfiqur Rahim</p>
-                            <p class="ready-time">Ready 12m ago</p>
-                        </div>
-                    </div>
-                    <div class="action-buttons-small">
-                        <button class="btn btn-outline-small">Remind</button>
-                        <button class="btn btn-solid-small">Collected</button>
-                    </div>
+                <div id="col-ready">
+                    <!-- Items injected by JS -->
                 </div>
             </div>
 
@@ -214,37 +95,10 @@
             <div class="board-column">
                 <div class="col-header">
                     <div class="col-title"><span class="dot completed-dot"></span> COMPLETED</div>
-                    <div class="col-count count-completed">142</div>
+                    <div class="col-count count-collected" id="count-collected">0</div>
                 </div>
-                
-                <div class="card completed-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                    </div>
-                    <h3 class="token-number">#4465</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">MR</div>
-                        <p class="cust-name">Mushfiqur Rahim</p>
-                    </div>
-                    <div class="card-bottom">
-                        <p class="item-meta">3 Items • Delivered 5m ago</p>
-                        <span class="pill pill-completed">Collected</span>
-                    </div>
-                </div>
-
-                <div class="card completed-card">
-                    <div class="card-top">
-                        <p class="token-label">TOKEN ID</p>
-                    </div>
-                    <h3 class="token-number">#4462</h3>
-                    <div class="customer-info">
-                        <div class="cust-av">TI</div>
-                        <p class="cust-name">Tamim Iqbal</p>
-                    </div>
-                    <div class="card-bottom">
-                        <p class="item-meta">1 Item • Delivered 12m ago</p>
-                        <span class="pill pill-completed">Collected</span>
-                    </div>
+                <div id="col-collected">
+                    <!-- Items injected by JS -->
                 </div>
             </div>
 
@@ -252,5 +106,6 @@
     </main>
 </div>
 
+<script src="../../js/staff/live_order_queue.js"></script>
 </body>
 </html>
