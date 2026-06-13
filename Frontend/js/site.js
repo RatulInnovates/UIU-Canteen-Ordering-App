@@ -63,7 +63,8 @@
         var target = e.target.closest(
             '.place-btn, .save-btn, .run-diag-btn, .btn-archive, .btn-publish, .btn-quick-ops, .bulk-btn, .btn-add, .clear-notif-btn, .report-btn'
         );
-        var notif = e.target.closest('.icon-btn[aria-label="Notifications"]');
+        var notif = e.target.closest('.icon-btn[aria-label="Notifications"], .icon-btn[title="Notifications"]');
+        var settings = e.target.closest('.icon-btn[aria-label="Settings"], .icon-btn[title="Settings"]');
 
         if (notif) {
             e.preventDefault();
@@ -160,6 +161,14 @@
             e.preventDefault();
             showToast('Opening report summary…');
             return;
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const dateEl = document.getElementById("liveDate");
+        if (dateEl) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateEl.textContent = new Date().toLocaleDateString(undefined, options);
         }
     });
 })();

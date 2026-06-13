@@ -14,15 +14,15 @@
       </div>
 
       <div class="menu">
-        <a href="#" class="menu-item active">📊Dashboard</a>
+        <a href="admin_dashboard.html" class="menu-item active">📊Dashboard</a>
         <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
-        <a href="promotions_manager.html" class="menu-item">📢Promotions</a>
+        <a href="admin_settings.html" class="menu-item">⚙️Settings</a>
       </div>
 
       <div class="sidebar-bottom">
         <a href="../student/student_dashboard.html" class="student-btn">Switch to Student View</a>
         <div class="bottom-links">
-          <a class="bottom-links" href="#">Help center</a>
+          <a class="bottom-links" href="admin_help.html">Help center</a>
           <a class="bottom-links logout-btn-link" href="../../index.html">Logout</a>
         </div>
       </div>
@@ -30,22 +30,22 @@
 
     <div class="right">
       <div class="topbar">
-        <div class="topbar-left">
+        <div class="topbar-left" style="display: flex; align-items: center; gap: 12px;">
           <span class="topbar-title">Dashboard</span>
-          <span class="topbar-date">📅 Oct 24, 2023</span>
+          <span id="liveDate" style="font-size: 13px; color: #888; border-left: 1px solid #444; padding-left: 12px; margin-top: 4px;"></span>
         </div>
         <div class="search">
           <input type="text" placeholder="🔍 Search data points..." />
         </div>
         <div class="topbar-right">
-          <a href="" class="icon-btn" title="Notifications">🔔</a>
-          <a href="" class="icon-btn" title="Settings">⚙</a>
+          <a href="#" class="icon-btn" title="Notifications">🔔</a>
+          <a href="admin_settings.html" class="icon-btn" title="Settings">⚙</a>
           <div class="user-profile">
             <div class="user-info">
               <span class="user-name">Admin User</span>
               <span class="user-role">Head of Operations</span>
             </div>
-            <a href="#" class="avatar-link">
+            <a href="admin_settings.html" class="avatar-link">
               <img
                 src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg"
                 alt="AU"
@@ -83,17 +83,14 @@
           <div class="stat-card">
             <div class="stat-top">
               <span class="stat-icon">💵</span>
-              <span class="badge badge-green">+14.2%</span>
             </div>
             <div class="stat-label">Daily Revenue</div>
             <div class="stat-value">৳42,850.00</div>
-            <div class="stat-sub">UPDATED 2M AGO</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-top">
               <span class="stat-icon">🛍️</span>
-              <span class="badge badge-live">● Live</span>
             </div>
             <div class="stat-label">Active Orders</div>
             <div class="stat-value">28</div>
@@ -103,7 +100,6 @@
           <div class="stat-card">
             <div class="stat-top">
               <span class="stat-icon" style="color: #7c3aed">📈</span>
-              <span class="badge badge-gray">Avg Week</span>
             </div>
             <div class="stat-label">Today vs Yesterday</div>
             <div class="stat-value">
@@ -117,52 +113,21 @@
 
         <div class="analytics-alerts-row">
           <div class="analytics-card">
-            <!-- <div class="analytics-header">
+            <div class="analytics-header">
               <div>
-                <div class="analytics-title">Revenue Analytics</div>
+                <div class="analytics-title">Sales Share Analytics</div>
                 <div class="analytics-sub">
-                  Hourly distribution across all canteens
+                  Percentage distribution of items sold today
                 </div>
               </div>
-              <div class="analytics-tabs">
-                <button class="btn">Weekly</button>
-                <button class="btn active">Today</button>
-              </div>
-            </div> -->
+            </div>
 
-            <!-- <div class="bar-chart">
-              <div class="bar-wrap">
-                <div class="bar" style="height: 40px; background-color: #e0e0e0"></div>
+            <div class="pie-chart-container" style="display: flex; align-items: center; justify-content: space-around; padding: 20px; margin-bottom: 20px; background: #2a2a2a; border-radius: 8px;">
+              <div id="salesPieChart" style="width: 150px; height: 150px; border-radius: 50%; background: conic-gradient(#f0a040 0% 100%); transition: background 0.4s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"></div>
+              <div id="salesPieLegend" style="display: flex; flex-direction: column; gap: 8px; color: #fff;">
+                <!-- Legend items with colors -->
               </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 55px; background-color: #e0e0e0"></div>
-              </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 70px; background-color: #e0e0e0"></div>
-              </div>
-              <div class="bar-wrap peak-wrap">
-                <div class="peak-label">12k<br />Peak</div>
-                <div class="bar" style="height: 180px; background-color: #f0a040"></div>
-              </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 90px; background-color: #e0e0e0"></div>
-              </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 65px; background-color: #e0e0e0"></div>
-              </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 45px; background-color: #e0e0e0"></div>
-              </div>
-              <div class="bar-wrap">
-                <div class="bar" style="height: 30px; background-color: #e0e0e0"></div>
-              </div>
-            </div> -->
-            <!-- <div class="chart-x-labels">
-              <span>08:00</span>
-              <span>12:00</span>
-              <span>16:00</span>
-              <span>20:00</span>
-            </div> -->
+            </div>
 
             <div class="top-items-header">
               <span class="top-items-title">Top Performing Items</span>
@@ -233,15 +198,8 @@
 
               <a href="#"><button class="clear-notif-btn">CLEAR ALL NOTIFICATIONS</button></a>
             </div> -->
-            <div class="report-card">
-              <div class="report-title">Daily Report Ready</div>
-              <div class="report-desc">
-                Yesterday's performance analysis is ready for review. Insights
-                show a 12% increase in mobile app usage.
-              </div>
-              <a href="#" class="report-btn">Read Summary →</a>
-            </div>
           </div>
+        </div>
         </div>
       </div>
 
@@ -250,5 +208,6 @@
       </div>
     </div>
     <script src="../../js/site.js" defer></script>
+    <script src="../../js/admin/admin_dashboard.js" defer></script>
   </body>
 </html>
