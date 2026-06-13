@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="../../css/Admin/admin_dashboard.css" />
+    <link rel="stylesheet" href="../../css/ui-feedback.css" />
+    <style>
+      .settings-card {
+        background: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+      .settings-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 8px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-label {
+        font-size: 12px;
+        color: #aaa;
+        font-weight: bold;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .form-input {
+        width: 100%;
+        padding: 10px;
+        background: #2a2a2a;
+        border: 1px solid #444;
+        border-radius: 4px;
+        color: #fff;
+        box-sizing: border-box;
+      }
+      .form-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #ddd;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .form-checkbox input {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-title">Campus Eats</div>
+        <div class="logo-sub">ADMIN CONSOLE</div>
+      </div>
+
+      <div class="menu">
+        <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+        <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+        <a href="#" class="menu-item active">⚙️Settings</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="../student/student_dashboard.html" class="student-btn">Switch to Student View</a>
+        <div class="bottom-links">
+          <a class="bottom-links" href="admin_help.html">Help center</a>
+          <a class="bottom-links logout-btn-link" href="../../index.html">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="topbar">
+        <div class="topbar-left" style="display: flex; align-items: center; gap: 12px;">
+          <span class="topbar-title">Settings</span>
+          <span id="liveDate" style="font-size: 13px; color: #888; border-left: 1px solid #444; padding-left: 12px; margin-top: 4px;"></span>
+        </div>
+        <div class="topbar-right">
+          <a href="#" class="icon-btn" title="Notifications">🔔</a>
+          <a href="admin_settings.html" class="icon-btn" title="Settings">⚙</a>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name">Admin User</span>
+              <span class="user-role">Head of Operations</span>
+            </div>
+            <a href="admin_settings.html" class="avatar-link">
+              <img
+                src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg"
+                alt="AU"
+                class="avatar-img"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1 class="page-title">Console Settings</h1>
+            <p class="page-desc">
+              Operational parameters and terminal configurations (Read-only view).
+            </p>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <div class="settings-title">🏢 Canteen Profile</div>
+          <div class="form-group">
+            <div class="form-label">Canteen Display Name</div>
+            <input type="text" class="form-input" value="UIU Campus Eats Canteen" disabled />
+          </div>
+          <div class="form-group">
+            <div class="form-label">Currency Symbol</div>
+            <input type="text" class="form-input" value="৳ (BDT)" disabled />
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <div class="settings-title">⚙️ Operational Limits</div>
+          <div class="form-group">
+            <div class="form-label">Maximum Daily Pre-orders Limit</div>
+            <input type="number" class="form-input" value="250" disabled />
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox" style="opacity: 0.7; cursor: default;">
+              <input type="checkbox" checked disabled />
+              Enable Automated Restock Notifications
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox" style="opacity: 0.7; cursor: default;">
+              <input type="checkbox" checked disabled />
+              Enable Audible Kitchen Queue Alerts
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+      </div>
+    </div>
+
+    <script src="../../js/site.js" defer></script>
+  </body>
+</html>

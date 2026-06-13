@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Help Center</title>
+    <link rel="stylesheet" href="../../css/Admin/admin_dashboard.css" />
+    <link rel="stylesheet" href="../../css/ui-feedback.css" />
+    <style>
+      .faq-card {
+        background: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .faq-question {
+        font-size: 16px;
+        font-weight: bold;
+        color: #f0a040;
+        margin-bottom: 8px;
+      }
+      .faq-answer {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo-title">Campus Eats</div>
+        <div class="logo-sub">ADMIN CONSOLE</div>
+      </div>
+
+      <div class="menu">
+        <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+        <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+        <a href="admin_settings.html" class="menu-item">⚙️Settings</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="../student/student_dashboard.html" class="student-btn">Switch to Student View</a>
+        <div class="bottom-links">
+          <a class="bottom-links active" href="#">Help center</a>
+          <a class="bottom-links logout-btn-link" href="../../index.html">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="topbar">
+        <div class="topbar-left" style="display: flex; align-items: center; gap: 12px;">
+          <span class="topbar-title">Help Center</span>
+          <span id="liveDate" style="font-size: 13px; color: #888; border-left: 1px solid #444; padding-left: 12px; margin-top: 4px;"></span>
+        </div>
+        <div class="topbar-right">
+          <a href="#" class="icon-btn" title="Notifications">🔔</a>
+          <a href="admin_settings.html" class="icon-btn" title="Settings">⚙</a>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name">Admin User</span>
+              <span class="user-role">Head of Operations</span>
+            </div>
+            <a href="admin_settings.html" class="avatar-link">
+              <img
+                src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg"
+                alt="AU"
+                class="avatar-img"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1 class="page-title">Operations Support</h1>
+            <p class="page-desc">
+              Browse reference documentation, operation guidelines, and quick answers to system alerts.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">💡 How do I download Yesterday's Sales Report?</div>
+          <div class="faq-answer">
+            Go to the <strong>Sales Reports</strong> tab from the sidebar menu, and click on the <strong>Download CSV</strong> link located at the top-right of the Recent Transactions section.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">🛠️ How is the Sales Share Pie Chart calculated?</div>
+          <div class="faq-answer">
+            The pie chart dynamically aggregates the sales counts of all items sold today and displays their percentage share relative to the total quantity sold today.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">🚪 How do I switch views to verify Student ordering flows?</div>
+          <div class="faq-answer">
+            Click the <strong>Switch to Student View</strong> button located at the bottom of the sidebar to instantly access the student food ordering layout.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+      </div>
+    </div>
+
+    <script src="../../js/site.js" defer></script>
+  </body>
+</html>
