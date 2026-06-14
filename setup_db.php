@@ -1,7 +1,8 @@
 <?php
-$host = 'localhost';
+// $host = 'localhost';
+$host = '127.0.0.1';
 $user = 'root';
-$password = ''; // Default XAMPP
+$password = '12345'; // Default XAMPP
 
 // 1. Connect to MySQL Server (No database selected yet)
 $conn = new mysqli($host, $user, $password);

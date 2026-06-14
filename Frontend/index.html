@@ -56,8 +56,8 @@
 
             <section class="auth-forms" aria-live="polite">
                 <div class="auth-forms-inner">
-                    <!-- Login -->
-                    <form id="form-login" class="auth-panel" action="#" method="get" novalidate>
+                    
+                    <form id="form-login" class="auth-panel" action="#">
                         <h2 class="auth-form-title">Welcome Back</h2>
                         <p class="auth-form-sub">Please select your role and enter your credentials.</p>
 
@@ -125,8 +125,7 @@
                         </p>
                     </form>
 
-                    <!-- Sign up -->
-                    <form id="form-signup" class="auth-panel auth-panel-hidden" action="#" method="get" novalidate>
+                    <form id="form-signup" class="auth-panel auth-panel-hidden" action="#">
                         <h2 class="auth-form-title">Create Account</h2>
                         <p class="auth-form-sub">Choose your role and register with your institutional email.</p>
 
@@ -226,88 +225,148 @@
     </footer>
 
     <script>
-(function () {
-    var DASHBOARDS = {
-        student: 'pages/student/student_dashboard.html',
-        staff: 'pages/staff/staff_dashboard.html',
-        admin: 'pages/Admin/admin_dashboard.html'
-    };
+    (function () {
+        var DASHBOARDS = {
+            student: 'pages/student/student_dashboard.html',
+            staff: 'pages/staff/staff_dashboard.html',
+            admin: 'pages/Admin/admin_dashboard.html'
+        };
 
-    function setRole(formEl, role) {
-        var hidden = formEl.id === 'form-login'
-            ? document.getElementById('login-role')
-            : document.getElementById('signup-role');
-        formEl.querySelectorAll('.auth-role-btn').forEach(function (btn) {
-            var isOn = btn.getAttribute('data-role') === role;
-            btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+        // --- UI TOGGLES (Roles, Show/Hide Passwords) ---
+        function setRole(formEl, role) {
+            var hidden = formEl.id === 'form-login' ? document.getElementById('login-role') : document.getElementById('signup-role');
+            formEl.querySelectorAll('.auth-role-btn').forEach(function (btn) {
+                var isOn = btn.getAttribute('data-role') === role;
+                btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+            });
+            if (hidden) hidden.value = role;
+        }
+
+        document.querySelector('#form-login .auth-role-grid').addEventListener('click', function (e) {
+            var btn = e.target.closest('.auth-role-btn');
+            if (!btn) return;
+            e.preventDefault();
+            setRole(document.getElementById('form-login'), btn.getAttribute('data-role'));
         });
-        if (hidden) hidden.value = role;
-    }
 
-    document.querySelector('#form-login .auth-role-grid').addEventListener('click', function (e) {
-        var btn = e.target.closest('.auth-role-btn');
-        if (!btn) return;
-        e.preventDefault();
-        setRole(document.getElementById('form-login'), btn.getAttribute('data-role'));
-    });
+        document.querySelector('#form-signup .auth-role-grid').addEventListener('click', function (e) {
+            var btn = e.target.closest('.auth-role-btn');
+            if (!btn) return;
+            e.preventDefault();
+            setRole(document.getElementById('form-signup'), btn.getAttribute('data-role'));
+        });
 
-    document.querySelector('#form-signup .auth-role-grid').addEventListener('click', function (e) {
-        var btn = e.target.closest('.auth-role-btn');
-        if (!btn) return;
-        e.preventDefault();
-        setRole(document.getElementById('form-signup'), btn.getAttribute('data-role'));
-    });
+        document.querySelectorAll('[data-show]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                var mode = el.getAttribute('data-show');
+                var loginForm = document.getElementById('form-login');
+                var signupForm = document.getElementById('form-signup');
+                if (mode === 'signup') {
+                    loginForm.classList.add('auth-panel-hidden');
+                    signupForm.classList.remove('auth-panel-hidden');
+                } else {
+                    signupForm.classList.add('auth-panel-hidden');
+                    loginForm.classList.remove('auth-panel-hidden');
+                }
+            });
+        });
 
-    document.querySelectorAll('[data-show]').forEach(function (el) {
-        el.addEventListener('click', function () {
-            var mode = el.getAttribute('data-show');
-            var loginForm = document.getElementById('form-login');
-            var signupForm = document.getElementById('form-signup');
-            if (mode === 'signup') {
-                loginForm.classList.add('auth-panel-hidden');
-                signupForm.classList.remove('auth-panel-hidden');
-            } else {
-                signupForm.classList.add('auth-panel-hidden');
-                loginForm.classList.remove('auth-panel-hidden');
+        document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var id = btn.getAttribute('data-toggle-password');
+                var input = document.getElementById(id);
+                if (!input) return;
+                input.type = input.type === 'password' ? 'text' : 'password';
+                btn.setAttribute('aria-label', input.type === 'password' ? 'Show password' : 'Hide password');
+            });
+        });
+
+        function goDashboard(role) {
+            var path = DASHBOARDS[role];
+            if (path) window.location.href = path;
+        }
+
+        // --- LIVE DATABASE CONNECTIONS ---
+        
+        // 1. Log In Submissions
+        document.getElementById('form-login').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            
+            // Strictly block empty inputs
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            const formData = new FormData(this);
+            
+            try {
+                // Point to our login PHP script
+                const res = await fetch('../backend/auth/login.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await res.json();
+                
+                if (result.status === 'success') {
+                    if (window.UIToast) window.UIToast.show('Signed in successfully!');
+                    
+                    // Route the user based on the secure role returned from the database
+                    const userRole = result.data.user.role || 'student';
+                    setTimeout(function () { goDashboard(userRole); }, 1000);
+                } else {
+                    // Alert the user if the password/email is wrong
+                    if (window.UIToast) window.UIToast.show(result.message);
+                    else alert(result.message);
+                }
+            } catch (err) {
+                console.error("Login failed:", err);
             }
         });
-    });
 
-    document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var id = btn.getAttribute('data-toggle-password');
-            var input = document.getElementById(id);
-            if (!input) return;
-            input.type = input.type === 'password' ? 'text' : 'password';
-            btn.setAttribute('aria-label', input.type === 'password' ? 'Show password' : 'Hide password');
+        // 2. Sign Up Submissions
+        document.getElementById('form-signup').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            
+            // Strictly block empty inputs
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            var p1 = document.getElementById('signup-password').value;
+            var p2 = document.getElementById('signup-password2').value;
+            if (p1 !== p2) {
+                if (window.UIToast) window.UIToast.show('Passwords do not match.');
+                return;
+            }
+            
+            const formData = new FormData(this);
+            
+            try {
+                const res = await fetch('../backend/auth/register.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await res.json();
+                
+                if (result.status === 'success') {
+                    if (window.UIToast) window.UIToast.show('Account created! Please sign in.');
+                    
+                    // Switch back to login view automatically
+                    setTimeout(function () {
+                        document.getElementById('form-signup').classList.add('auth-panel-hidden');
+                        document.getElementById('form-login').classList.remove('auth-panel-hidden');
+                    }, 1500);
+                } else {
+                    if (window.UIToast) window.UIToast.show(result.message);
+                    else alert(result.message);
+                }
+            } catch (err) {
+                console.error("Sign up failed:", err);
+            }
         });
-    });
-
-    function goDashboard(role) {
-        var path = DASHBOARDS[role];
-        if (path) window.location.href = path;
-    }
-
-    document.getElementById('form-login').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var role = document.getElementById('login-role').value;
-        if (window.UIToast) window.UIToast.show('Signed in. Loading your dashboard…');
-        setTimeout(function () { goDashboard(role); }, 500);
-    });
-
-    document.getElementById('form-signup').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var p1 = document.getElementById('signup-password').value;
-        var p2 = document.getElementById('signup-password2').value;
-        if (p1 !== p2) {
-            if (window.UIToast) window.UIToast.show('Passwords do not match.');
-            return;
-        }
-        var role = document.getElementById('signup-role').value;
-        if (window.UIToast) window.UIToast.show('Welcome! Creating your session…');
-        setTimeout(function () { goDashboard(role); }, 500);
-    });
-})();
+    })();
     </script>
     <script src="js/site.js" defer></script>
 </body>

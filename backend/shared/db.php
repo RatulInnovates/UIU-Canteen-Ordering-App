@@ -1,14 +1,15 @@
 <?php
 // backend/shared/db.php
 
-$host = 'localhost';
-$user = 'root';
-$password = '';
+$host = '127.0.0.1'; // Forces TCP connection to respect the port
+$port = '3307';      // Your specific MariaDB port
+$user = 'root';      // Kept as root
+$password = '12345'; // The password you set in the terminal
 $dbname = 'uiu_canteen';
 
 try {
-    // First, connect without DB to check/create it
-    $pdo = new PDO("mysql:host=$host;charset=utf8", $user, $password);
+    // Inject the port into the PDO connection string
+    $pdo = new PDO("mysql:host=$host;port=$port;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     
@@ -31,7 +32,6 @@ try {
         $pdo->exec("USE `$dbname`");
     }
 } catch (PDOException $e) {
-    // If we can't connect at all, die
     header('Content-Type: application/json');
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed: ' . $e->getMessage()]);
     exit();
