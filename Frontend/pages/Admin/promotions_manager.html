@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promotions Manager</title>
+    <link rel="stylesheet" href="../../css/Admin/promotions_manager.css">
+    <link rel="stylesheet" href="../../css/ui-feedback.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-title">Campus Eats</div>
+            <div class="logo-sub">ADMIN CONSOLE</div>
+        </div>
+
+        <div class="menu">
+            <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+            <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+            <a href="promotions_manager.html" class="menu-item active">🎟️Promotions</a>
+            <a href="user_management.html" class="menu-item">👥Users & Staff</a>
+            <a href="admin_settings.html" class="menu-item">⚙️Settings</a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="../student/student_dashboard.html" class="student-btn">Switch to Student View</a>
+            <div class="bottom-links">
+                <a class="bottom-links" href="admin_help.html">Help center</a>
+                <a class="bottom-links logout-btn-link" href="../../index.html">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="topbar">
+            <div class="topbar-left" style="display: flex; align-items: center; gap: 12px;">
+                <span class="topbar-title">Promotions Manager</span>
+                <span id="liveDate" style="font-size: 13px; color: #888; border-left: 1px solid #444; padding-left: 12px; margin-top: 4px;"></span>
+            </div>
+            <div class="topbar-right">
+                <a href="#" class="icon-btn" title="Notifications">🔔</a>
+                <a href="admin_settings.html" class="icon-btn" title="Settings">⚙</a>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Head of Operations</span>
+                    </div>
+                    <a href="admin_settings.html" class="avatar-link">
+                        <img src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg" alt="AU" class="avatar-img" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="page-header">
+                <h1 class="page-title">Manage Promotions & Discounts</h1>
+                <p class="page-desc">Create discount codes, target campus customer segments, and toggle campaign visibility.</p>
+            </div>
+
+            <div class="promotions-layout">
+                <!-- Left Column: Current Promotions -->
+                <div class="promotions-card">
+                    <div class="section-title">Active & Queued Campaigns</div>
+                    <div class="promo-grid" id="promoList">
+                        <!-- Dynamic list populated by Javascript -->
+                        <div style="text-align: center; color: #888; padding: 20px;">Loading promotions...</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Create New Promotion Form -->
+                <div class="creator-card">
+                    <div class="section-title">New Promotion</div>
+                    <form id="newPromoForm">
+                        <div class="form-group">
+                            <label for="title">Campaign Title</label>
+                            <input type="text" id="title" name="title" placeholder="e.g. Winter Semester discount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="discount_code">Discount Code</label>
+                            <input type="text" id="discount_code" name="discount_code" placeholder="e.g. CAMPUS10" required style="text-transform: uppercase;">
+                        </div>
+                        <div class="form-group">
+                            <label for="target_role">Target Audience</label>
+                            <select id="target_role" name="target_role">
+                                <option value="all">Everyone</option>
+                                <option value="student">Students Only</option>
+                                <option value="staff">Staff Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="active_days">Active Days / Duration</label>
+                            <input type="text" id="active_days" name="active_days" value="Everyday" placeholder="e.g. Mon-Fri or Everyday">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Initial Status</label>
+                            <select id="status" name="status">
+                                <option value="queued">Queued (Inactive)</option>
+                                <option value="active">Active (Live)</option>
+                                <option value="archived">Archived</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="image_url">Campaign Image URL (Optional)</label>
+                            <input type="url" id="image_url" name="image_url" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <button type="submit" class="submit-btn">Create Promotion</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+        </div>
+    </div>
+
+    <script src="../../js/site.js" defer></script>
+    <script src="../../js/admin/promotions_manager.js" defer></script>
+</body>
+</html>

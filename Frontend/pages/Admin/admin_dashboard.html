@@ -16,6 +16,8 @@
       <div class="menu">
         <a href="admin_dashboard.html" class="menu-item active">📊Dashboard</a>
         <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+        <a href="promotions_manager.html" class="menu-item">🎟️Promotions</a>
+        <a href="user_management.html" class="menu-item">👥Users & Staff</a>
         <a href="admin_settings.html" class="menu-item">⚙️Settings</a>
       </div>
 
@@ -129,75 +131,96 @@
               </div>
             </div>
 
-            <div class="top-items-header">
-              <span class="top-items-title">Top Performing Items</span>
-              <a href="" class="view-all-link">View All Menu</a>
+            <div class="analytics-header" style="margin-top: 25px;">
+              <div>
+                <div class="analytics-title">Daily Revenue Trend</div>
+                <div class="analytics-sub">Revenue performance tracker over the last 7 days</div>
+              </div>
             </div>
-
-            <div class="top-items-list">
-              <div class="top-item-card">
-                <img src="https://breadboozebacon.com/wp-content/uploads/2023/05/BBQ-Chicken-Pizza-SQUARE.jpg" alt="Spicy chicken Pizza" class="top-item-img" />
-                <div class="top-item-info">
-                  <a href="#" class="top-item-name">Spicy chicken Pizza</a>
-                  <div class="top-item-sub">142 Sales today</div>
-                  <div class="top-item-meta">
-                    <span class="top-item-price">৳24,140</span>
-                    <span class="badge badge-green">+5%</span>
-                  </div>
-                </div>
-                <a href="" class="item-more">⋮</a>
-              </div>
-
-              <div class="top-item-card">
-                <img src="https://emeals-menubuilder.s3.amazonaws.com/v1/recipes/802409/pictures/large_chicken-avocado-power-bowl.jpg" alt="Chicken Avocado Bowl" class="top-item-img" />
-                <div class="top-item-info">
-                  <a href="#" class="top-item-name">Chicken Avocado Bowl</a>
-                  <div class="top-item-sub">98 Sales today</div>
-                  <div class="top-item-meta">
-                    <span class="top-item-price">৳14,700</span>
-                    <span class="badge badge-red">-2%</span>
-                  </div>
-                </div>
-                <a href="#" class="item-more">⋮</a>
-              </div>
+            
+            <div class="line-chart-container" style="background: #2a2a2a; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <!-- Detailed SVG Line Graph (Shortened Height) -->
+                <svg id="revenueLineChart" viewBox="0 0 600 150" style="width: 100%; height: auto; display: block; overflow: visible;">
+                    <defs>
+                        <!-- Premium gradient fill -->
+                        <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#f0a040" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#f0a040" stop-opacity="0.0" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Grid Lines -->
+                    <g stroke="#444" stroke-width="0.5" stroke-dasharray="4,4">
+                        <line x1="50" y1="35" x2="560" y2="35" />
+                        <line x1="50" y1="80" x2="560" y2="80" />
+                        <line x1="50" y1="125" x2="560" y2="125" />
+                    </g>
+                    
+                    <!-- Axis Labels -->
+                    <g font-size="10" fill="#888" font-family="sans-serif">
+                        <text id="revenueMaxText" x="15" y="39" text-anchor="start">Max</text>
+                        <text id="revenueMidText" x="15" y="84" text-anchor="start">Mid</text>
+                        <text x="15" y="129" text-anchor="start">0 BDT</text>
+                    </g>
+                    
+                    <!-- Gradient Area below the path (filled dynamically by JS) -->
+                    <path id="chartArea" fill="url(#lineGrad)" d="" />
+                    
+                    <!-- Line Path (drawn dynamically by JS) -->
+                    <path id="chartLine" fill="none" stroke="#f0a040" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="" />
+                    
+                    <!-- Data points & interactive tooltips (rendered dynamically by JS) -->
+                    <g id="chartDots"></g>
+                    <g id="chartLabels" font-size="9" fill="#aaa" font-family="sans-serif" text-anchor="middle"></g>
+                </svg>
             </div>
           </div>
 
-          <div class="right-col">
-            <!-- <div class="alerts-card">
-              <div class="alerts-header">
-                <span class="alerts-title">System Alerts</span>
-                <span class="badge badge-red-solid">PRIORITY HIGH</span>
+          <div class="right-col" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="recent-orders-card" style="background: #1e1e1e; border: 1px solid #333; border-radius: 14px; padding: 18px; color: white;">
+              <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 8px;">
+                <span class="card-title" style="font-size: 16px; font-weight: bold;">Recent Orders Feed</span>
+                <span class="badge badge-green" style="background: #2a7a4a; color: white;">LIVE</span>
+              </div>
+              <div class="orders-feed-list" id="recentOrdersList" style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="text-align: center; color: #888; padding: 20px;">Loading orders...</div>
+              </div>
+            </div>
+
+            <div class="top-items-card" style="background: white; border-radius: 14px; padding: 20px; box-shadow: 2px 2px 10px rgba(0,0,0,0.06);">
+              <div class="top-items-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span class="top-items-title" style="font-size: 16px; font-weight: bold; color: #111;">Top Performing Items</span>
+                <a href="" class="view-all-link" style="font-size: 13px; color: #f0a040; text-decoration: none; font-weight: bold;">View All</a>
               </div>
 
-              <div class="alert-item">
-                <div class="alert-icon alert-icon-red">⚠️</div>
-                <div class="alert-body">
-                  <div class="alert-title-text">Low Inventory: Mozzarella Cheese</div>
-                  <div class="alert-desc">Current stock: 2.4kg. Predicted exhaustion: 14:00.</div>
-                  <a href="#" class="alert-action-link">ORDER RESTOCK</a>
+              <div class="top-items-list" style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="top-item-card">
+                  <img src="https://breadboozebacon.com/wp-content/uploads/2023/05/BBQ-Chicken-Pizza-SQUARE.jpg" alt="Spicy chicken Pizza" class="top-item-img" />
+                  <div class="top-item-info">
+                    <a href="#" class="top-item-name">Spicy chicken Pizza</a>
+                    <div class="top-item-sub">142 Sales today</div>
+                    <div class="top-item-meta">
+                      <span class="top-item-price">৳24,140</span>
+                      <span class="badge badge-green">+5%</span>
+                    </div>
+                  </div>
+                  <a href="" class="item-more">⋮</a>
+                </div>
+
+                <div class="top-item-card">
+                  <img src="https://emeals-menubuilder.s3.amazonaws.com/v1/recipes/802409/pictures/large_chicken-avocado-power-bowl.jpg" alt="Chicken Avocado Bowl" class="top-item-img" />
+                  <div class="top-item-info">
+                    <a href="#" class="top-item-name">Chicken Avocado Bowl</a>
+                    <div class="top-item-sub">98 Sales today</div>
+                    <div class="top-item-meta">
+                      <span class="top-item-price">৳14,700</span>
+                      <span class="badge badge-red">-2%</span>
+                    </div>
+                  </div>
+                  <a href="#" class="item-more">⋮</a>
                 </div>
               </div>
-
-              <div class="alert-item">
-                <div class="alert-icon alert-icon-orange">💳</div>
-                <div class="alert-body">
-                  <div class="alert-title-text">Unpaid Batch: Order #4421</div>
-                  <div class="alert-desc">Payment gateway timeout reported. Manual verification needed.</div>
-                  <a href="" class="alert-action-link">VERIFY PAYMENT</a>
-                </div>
-              </div>
-
-              <div class="alert-item alert-item-last">
-                <div class="alert-icon alert-icon-gray">🖥️</div>
-                <div class="alert-body">
-                  <div class="alert-title-text">Kitchen Terminal #3 Offline</div>
-                  <div class="alert-desc">Status: Resolved by Local IT.</div>
-                </div>
-              </div>
-
-              <a href="#"><button class="clear-notif-btn">CLEAR ALL NOTIFICATIONS</button></a>
-            </div> -->
+            </div>
           </div>
         </div>
         </div>

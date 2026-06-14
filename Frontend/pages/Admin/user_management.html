@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User & Staff Management</title>
+    <link rel="stylesheet" href="../../css/Admin/user_management.css">
+    <link rel="stylesheet" href="../../css/ui-feedback.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-title">Campus Eats</div>
+            <div class="logo-sub">ADMIN CONSOLE</div>
+        </div>
+
+        <div class="menu">
+            <a href="admin_dashboard.html" class="menu-item">📊Dashboard</a>
+            <a href="admin_sales_report.html" class="menu-item">📈Sales Reports</a>
+            <a href="promotions_manager.html" class="menu-item">🎟️Promotions</a>
+            <a href="user_management.html" class="menu-item active">👥Users & Staff</a>
+            <a href="admin_settings.html" class="menu-item">⚙️Settings</a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="../student/student_dashboard.html" class="student-btn">Switch to Student View</a>
+            <div class="bottom-links">
+                <a class="bottom-links" href="admin_help.html">Help center</a>
+                <a class="bottom-links logout-btn-link" href="../../index.html">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="topbar">
+            <div class="topbar-left" style="display: flex; align-items: center; gap: 12px;">
+                <span class="topbar-title">Users & Staff</span>
+                <span id="liveDate" style="font-size: 13px; color: #888; border-left: 1px solid #444; padding-left: 12px; margin-top: 4px;"></span>
+            </div>
+            <div class="search">
+                <input type="text" id="userSearch" placeholder="🔍 Search by name, email or ID..." />
+            </div>
+            <div class="topbar-right">
+                <a href="#" class="icon-btn" title="Notifications">🔔</a>
+                <a href="admin_settings.html" class="icon-btn" title="Settings">⚙</a>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Head of Operations</span>
+                    </div>
+                    <a href="admin_settings.html" class="avatar-link">
+                        <img src="https://png.pngtree.com/png-vector/20220719/ourmid/pngtree-color-icon---businessman-icon-color-sign-vectorteamwork-account-admin-photo-image_37961448.jpg" alt="AU" class="avatar-img" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="page-header">
+                <h1 class="page-title">User Directory & Role Management</h1>
+                <p class="page-desc">Search for campus users, modify user permissions, and assign staff or administrator privileges.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stat-cards-row">
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon">👥</span>
+                    </div>
+                    <div class="stat-label">Total Users</div>
+                    <div class="stat-value" id="countTotal">-</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon">🎓</span>
+                    </div>
+                    <div class="stat-label">Students</div>
+                    <div class="stat-value" id="countStudent">-</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon">👨‍🍳</span>
+                    </div>
+                    <div class="stat-label">Kitchen Staff</div>
+                    <div class="stat-value" id="countStaff">-</div>
+                </div>
+            </div>
+
+            <!-- Directory Table Card -->
+            <div class="users-card">
+                <div class="section-title">User Accounts Directory</div>
+                <table class="users-table" id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Student ID</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userListBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: #888;">Loading user directory...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>© 2024 CAMPUS EATS CULINARY INTELLIGENCE</span>
+        </div>
+    </div>
+
+    <script src="../../js/site.js" defer></script>
+    <script src="../../js/admin/user_management.js" defer></script>
+</body>
+</html>
