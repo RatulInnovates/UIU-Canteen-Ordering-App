@@ -6,12 +6,17 @@ body {
     background-color: rgb(247, 246, 246);
 }
 
-.sidebar{
+.sidebar {
     width: 240px;
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    height: calc(100vh - 16px);
+    position: sticky;
+    top: 8px;
+    box-sizing: border-box;
+    align-self: flex-start;
 }
 
 .logo{
@@ -32,7 +37,7 @@ body {
 .menu{
     display: flex;
     flex-direction: column;
-    padding-bottom: 500px;
+    margin-bottom: 30px;
 }
 
 .menu-item{
@@ -49,6 +54,7 @@ body {
 
 .sidebar-bottom{
     padding: 20px;
+    margin-top: auto;
 }
 
 .student-btn{
@@ -741,3 +747,101 @@ a.student-btn {
     border-radius: 50%;
     display: inline-block;
 }
+
+/* Hourly Revenue Line Chart & Recent Orders Styles */
+#revenueLineChart {
+    transition: all 0.3s ease;
+}
+
+#revenueLineChart path {
+    transition: d 0.5s ease-in-out;
+}
+
+#revenueLineChart circle {
+    transition: r 0.2s ease, fill 0.2s ease;
+    cursor: pointer;
+}
+
+#revenueLineChart circle:hover {
+    r: 7;
+    fill: #ffffff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.orders-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.feed-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    border-left: 4px solid orange;
+}
+
+.feed-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.feed-user {
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.feed-token {
+    font-size: 11px;
+    color: #f0a040;
+}
+
+.feed-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.feed-price {
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.feed-time {
+    font-size: 10px;
+    color: #888;
+}
+
+.feed-status {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-incoming  { background-color: #2b6cb0; color: white; }
+.status-preparing { background-color: #d69e2e; color: white; }
+.status-ready     { background-color: #2f855a; color: white; }
+.status-collected { background-color: #4a5568; color: white; }
+.status-cancelled { background-color: #c53030; color: white; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

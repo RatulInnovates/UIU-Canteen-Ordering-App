@@ -5,12 +5,17 @@ body {
     background-color: rgb(247, 246, 246);
 }
 
-.sidebar{
+.sidebar {
     width: 240px;
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    height: calc(100vh - 16px);
+    position: sticky;
+    top: 8px;
+    box-sizing: border-box;
+    align-self: flex-start;
 }
 
 .logo{
@@ -28,11 +33,10 @@ body {
 }
 
 
-
 .menu{
     display: flex;
     flex-direction: column;
-    padding-bottom: 500px;
+    margin-bottom: 30px;
 }
 
 .menu-item{
@@ -49,6 +53,7 @@ body {
 
 .sidebar-bottom{
     padding: 20px;
+    margin-top: auto;
 }
 
 a.student-btn {

@@ -75,46 +75,48 @@ if ($method === 'GET') {
         $topItems = $stmtTopItems->fetchAll();
     }
 
-    // 5. Hourly Revenue today (grouped by hour)
-    $stmtHourly = $pdo->query("
-        SELECT HOUR(created_at) AS hr, COALESCE(SUM(total), 0) AS total_amount
-        FROM orders
-        WHERE DATE(created_at) = CURRENT_DATE() AND status != 'cancelled'
-        GROUP BY HOUR(created_at)
-        ORDER BY hr ASC
-    ");
-    $hourlyData = [];
-    while ($row = $stmtHourly->fetch()) {
-        $hourlyData[intval($row['hr'])] = floatval($row['total_amount']);
-    }
-
+    // 5. Daily Revenue (Last 7 Days)
     $chartData = [];
-    $hasRealChartData = false;
-    for ($h = 8; $h <= 20; $h += 2) {
-        $label = sprintf("%02d:00", $h);
-        $totalVal = 0;
-        if (isset($hourlyData[$h])) $totalVal += $hourlyData[$h];
-        if (isset($hourlyData[$h+1])) $totalVal += $hourlyData[$h+1];
-        
-        if ($totalVal > 0) $hasRealChartData = true;
-
-        $chartData[] = [
+    for ($i = 6; $i >= 0; $i--) {
+        $dateStr = date('Y-m-d', strtotime("-$i days"));
+        $label = date('M d', strtotime("-$i days"));
+        $chartData[$dateStr] = [
             'label' => $label,
-            'value' => $totalVal
+            'value' => 0.0
         ];
     }
 
-    // Fallback: If no orders today, provide simulated/demo dataset based on overall orders
-    if (!$hasRealChartData) {
-        $chartData = [
-            ['label' => '08:00', 'value' => 1200],
-            ['label' => '10:00', 'value' => 2400],
-            ['label' => '12:00', 'value' => 8400],
-            ['label' => '14:00', 'value' => 6100],
-            ['label' => '16:00', 'value' => 3200],
-            ['label' => '18:00', 'value' => 4500],
-            ['label' => '20:00', 'value' => 1500]
-        ];
+    try {
+        $stmtDaily = $pdo->query("
+            SELECT DATE(created_at) AS order_date, COALESCE(SUM(total), 0) AS total_amount
+            FROM orders
+            WHERE created_at >= CURRENT_DATE() - INTERVAL 6 DAY AND status != 'cancelled'
+            GROUP BY DATE(created_at)
+        ");
+        while ($row = $stmtDaily->fetch()) {
+            $orderDate = $row['order_date'];
+            if (isset($chartData[$orderDate])) {
+                $chartData[$orderDate]['value'] = floatval($row['total_amount']);
+            }
+        }
+    } catch (PDOException $e) {
+        // Log or handle error, keep 0 values
+    }
+    $chartData = array_values($chartData);
+
+    // 6. Recent Orders
+    require_once __DIR__ . '/../shared/helpers.php';
+    $stmtRecent = $pdo->query("
+        SELECT o.id, u.name as customer_name, o.token_no, o.status, o.total, o.created_at
+        FROM orders o
+        JOIN users u ON o.user_id = u.id
+        ORDER BY o.created_at DESC
+        LIMIT 5
+    ");
+    $recentOrders = [];
+    while ($row = $stmtRecent->fetch()) {
+        $row['time_ago'] = get_time_ago($row['created_at']);
+        $recentOrders[] = $row;
     }
 
     json_response('success', [
@@ -124,7 +126,8 @@ if ($method === 'GET') {
         'preparing' => $activePreparing,
         'capacity_percentage' => $capacityPercentage,
         'top_items' => $topItems,
-        'hourly_revenue' => $chartData
+        'hourly_revenue' => $chartData,
+        'recent_orders' => $recentOrders
     ]);
 } else {
     json_response('error', 'Method not allowed');
