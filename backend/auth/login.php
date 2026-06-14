@@ -9,13 +9,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
+$role = $_POST['role'] ?? 'student';
 
 if (empty($email) || empty($password)) {
     json_response('error', 'Email and password are required');
 }
 
-$stmt = $pdo->prepare("SELECT id, name, email, password, role, student_id FROM users WHERE email = ?");
-$stmt->execute([$email]);
+$stmt = $pdo->prepare("SELECT id, name, email, password, role, student_id FROM users WHERE email = ? AND role = ?");
+$stmt->execute([$email, $role]);
 $user = $stmt->fetch();
 
 if ($user && password_verify($password, $user['password'])) {

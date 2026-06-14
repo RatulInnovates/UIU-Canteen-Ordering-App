@@ -58,10 +58,11 @@
                 <input type="text" placeholder="Search dishes, categories, or tags...">
             </div>
             <div class="filter-pills">
-                <button class="pill-btn active">All Menu</button>
-                <button class="pill-btn">Breakfast</button>
-                <button class="pill-btn">Lunch Specials</button>
-                <button class="pill-btn">Beverages</button>
+                <button class="pill-btn active" data-category="all">All Menu</button>
+                <button class="pill-btn" data-category="rice">Rice & mains</button>
+                <button class="pill-btn" data-category="fast">Fast bites</button>
+                <button class="pill-btn" data-category="healthy">Healthy</button>
+                <button class="pill-btn" data-category="drinks">Drinks</button>
             </div>
         </div>
 
@@ -90,9 +91,10 @@
                     <div style="margin-bottom:15px;">
                         <label style="display:block; margin-bottom:5px; color:#a0a0b0;">Category</label>
                         <select id="dishCategory" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #333; background:#151521; color:#fff;">
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Lunch Specials">Lunch Specials</option>
-                            <option value="Beverages">Beverages</option>
+                            <option value="rice">Rice & mains</option>
+                            <option value="fast">Fast bites</option>
+                            <option value="healthy">Healthy</option>
+                            <option value="drinks">Drinks</option>
                         </select>
                     </div>
                     <div style="margin-bottom:15px;">

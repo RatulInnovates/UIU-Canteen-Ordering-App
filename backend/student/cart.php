@@ -15,7 +15,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'GET') {
     // Read the cart directly from the database
     $stmt = $pdo->prepare("
-        SELECT c.item_id as id, m.name, m.price, c.qty 
+        SELECT c.item_id as id, m.name, m.price, m.image_url, c.qty 
         FROM cart c
         JOIN menu_items m ON c.item_id = m.id
         WHERE c.user_id = ?
@@ -71,7 +71,7 @@ elseif ($method === 'POST') {
 
         // Return the fresh cart state to update the UI badges
         $stmt = $pdo->prepare("
-            SELECT c.item_id as id, m.name, m.price, c.qty 
+            SELECT c.item_id as id, m.name, m.price, m.image_url, c.qty 
             FROM cart c
             JOIN menu_items m ON c.item_id = m.id
             WHERE c.user_id = ?

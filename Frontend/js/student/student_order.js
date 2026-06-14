@@ -58,7 +58,7 @@ function renderTray(cartData) {
         // Render exactly matching your CSS design
         trayItem.innerHTML = `
             <div class="tray-info">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=150&auto=format&fit=crop" alt="${item.name}">
+                <img src="${item.image_url || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=150&auto=format&fit=crop'}" alt="${item.name}">
                 <div>
                     <h3>${item.name}</h3>
                     <p>UIU Central Kitchen</p>

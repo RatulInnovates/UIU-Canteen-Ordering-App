@@ -1,5 +1,4 @@
-// menu_management.js
-let currentCategoryFilter = 'All Menu';
+let currentCategoryFilter = 'all';
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchMenu();
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.classList.add('active');
             
             // Set filter and refresh
-            currentCategoryFilter = e.target.innerText;
+            currentCategoryFilter = e.target.getAttribute('data-category');
             fetchMenu();
         });
     });
@@ -84,7 +83,7 @@ function fetchMenu() {
                 menuList.innerHTML = ""; // Clear list
                 
                 let items = data.data.items;
-                if (currentCategoryFilter !== 'All Menu') {
+                if (currentCategoryFilter !== 'all') {
                     items = items.filter(item => item.category === currentCategoryFilter);
                 }
 

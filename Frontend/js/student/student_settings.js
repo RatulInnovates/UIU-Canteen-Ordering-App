@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadUserProfile() {
     try {
-        const res = await fetch('../../backend/auth/guard.php');
+        const res = await fetch('../../../backend/auth/guard.php');
         const result = await res.json();
         
         if (result.status === 'success') {
@@ -25,7 +25,7 @@ async function loadUserProfile() {
 
 async function loadOrderHistory() {
     try {
-        const res = await fetch('../../backend/student/order_history.php');
+        const res = await fetch('../../../backend/student/order_history.php');
         const result = await res.json();
         
         if (result.status === 'success') {

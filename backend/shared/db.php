@@ -1,10 +1,11 @@
 <?php
 // backend/shared/db.php
+date_default_timezone_set('Asia/Dhaka');
 
 $host = '127.0.0.1'; // Forces TCP connection to respect the port
-$port = '3307';      // Your specific MariaDB port
+$port = '3306';      // Your specific MariaDB port
 $user = 'root';      // Kept as root
-$password = '12345'; // The password you set in the terminal
+$password = ''; // The password you set in the terminal
 $dbname = 'uiu_canteen';
 
 try {

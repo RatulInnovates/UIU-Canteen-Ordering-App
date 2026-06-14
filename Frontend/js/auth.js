@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Redirect based on role
                     setTimeout(() => {
-                        if (result.data.user.role === 'staff' || result.data.user.role === 'admin') {
+                        if (result.data.user.role === 'admin') {
+                            window.location.href = 'pages/admin/admin_dashboard.html';
+                        } else if (result.data.user.role === 'staff') {
                             window.location.href = 'pages/staff/staff_dashboard.html';
                         } else {
                             window.location.href = 'pages/student/student_dashboard.html';
